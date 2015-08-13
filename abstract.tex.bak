@@ -35,33 +35,60 @@ In our work, we extend the standard PSR learning algorithm by developing a new m
 
 \section{Results and Contributions}
 
-\subsection{Experiments}
+\subsection{Preliminaries}
 In the experiments that follow, we produce observations by simulating robot motion in labyrinth environments. We compare PSRs which use the base system to different degrees. To measure performance, the predictions of each PSR are compared to the actual probability distribution of the observations. 
 
-In the first experiment we look at the time spent in double loop systems. In both cases, the PSR with the Base System has 100 \% less error than without. In particular, we note that noise in the durations of loops doesn't harm the performance of the Base.
+
+\subsection{Double Loops}
+
+In the first experiment we look at the time spent in double loop labyrinths. 
 
 %pasted code to include images
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=45mm]{PaperScreenShots/PacMan10000.png}
-\caption{Timing predictions in double loops \label{overflow}}
+\includegraphics[width=45mm]{lucasplots/doubleloop0.png}
+\caption{No noise \label{overflow}}
 \end{figure}
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=45mm]{lucasplots/doubleloop0_1.png}
+\caption{Corridor noise \label{overflow}}
+\end{figure}
+
+In both cases, the PSR with the Base System has 100 \% less error than without. In particular, we note that noise in the durations of loops doesn't harm the performance of the Base System.
+
+\subsection{PacMan Labyrinth}
 
 In the second experiment, we look at timing for a PacMan-Type labyrinth. In addition, we use state weightings from the learned PSRs to predict distances between the robot and objects in the environment. 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=45mm]{PaperScreenShots/PacMan10000.png}
-\caption{Timing predictions in double loops \label{overflow}}
+\includegraphics[width=45mm]{lucasplots/pacman10000.png}
+\caption{Timing predictions in Pacman \label{overflow}}
 \end{figure}
 
-Here we extend our set of observations to wall colors. The base improves by /%5, showing that it can work just as well for multiple observations. 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=45mm]{PaperScreenShots/PacMan10000.png}
-\caption{Timing predictions in double loops \label{overflow}}
+\includegraphics[width=45mm]{lucasplots/Distance.png}
+\caption{Distance predictons from key \label{overflow}}
 \end{figure}
+
+Here, the Base System outperforms the naive by 100\% for timing and 45\% for distances.
+
+\subsection{Multiple Observations}
+
+Next, we change our set of observations to wall colors of the labyrinth. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=45mm]{lucasplots/MO.png}
+\caption{Predicting wall colors \label{overflow}}
+\end{figure}
+
+Here, the Base system outperforms that naive approach by 55/%. 
 
 \subsection{Relevance}
 The spectral framework for learning in partially observable environments has better theoretical guarantees [REFERENCE] than non-spectral methods. In this work, we showed a way to significantly improve results in practical settings, that is when one wants a smaller model. In future work, we hope to see a theoretical analysis of the apparent improvement and optimization in how one constructs the Base System for the multiple observation case. 
@@ -77,6 +104,8 @@ $$ \sum_{i=0}^{\infty} \gamma^i = \frac{1}{1-\gamma} $$
 
 Other math symbols $a \in A \cap B \subseteq C \equiv X \sim Y \leq Z$
 \end{comment}
+
+\end{document}
 
 
 
