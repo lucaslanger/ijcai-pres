@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  12 AUG 2015 20:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  13 AUG 2015 09:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -282,151 +282,52 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 18.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
+<PaperScreenShots/PacMan10000.png, id=1, 1371.1225pt x 770.88pt>
+File: PaperScreenShots/PacMan10000.png Graphic file (type png)
 
-LaTeX Warning: File `fixed_dome1.jpg' not found on input line 45.
+<use PaperScreenShots/PacMan10000.png>
+Package pdftex.def Info: PaperScreenShots/PacMan10000.png used on input line 46
+.
+(pdftex.def)             Requested size: 128.0374pt x 71.97575pt.
+File: PaperScreenShots/PacMan10000.png Graphic file (type png)
+ <use PaperScreenShots/PacMan10000.png>
+Package pdftex.def Info: PaperScreenShots/PacMan10000.png used on input line 54
+.
+(pdftex.def)             Requested size: 128.0374pt x 71.97575pt.
+File: PaperScreenShots/PacMan10000.png Graphic file (type png)
 
-
-! Package pdftex.def Error: File `fixed_dome1.jpg' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.45 \includegraphics[width=90mm]{fixed_dome1.jpg}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+aett on input line 45.
-(/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Overfull \hbox (16.0748pt too wide) in paragraph at lines 45--46
- [][] 
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+<use PaperScreenShots/PacMan10000.png>
+Package pdftex.def Info: PaperScreenShots/PacMan10000.png used on input line 62
+.
+(pdftex.def)             Requested size: 128.0374pt x 71.97575pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Underfull \hbox (badness 1360) in paragraph at lines 86--86
-[][]\T1/aer/m/n/9 Two of these, the \T1/aett/m/n/9 \num-bero-fau-thors \T1/aer/
-m/n/9 and \T1/aett/m/n/9 \alig-nau-
- []
+ <./PaperScreenShots/PacMan10000.png>] [2
 
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 142.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 157.
-
-[2]
-
-LaTeX Warning: Citation `bowman:reasoning' on page \thepage  undefined on input
- line 183.
-
-
-LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 1
-83.
-
-
-LaTeX Warning: Citation `braams:babel' on page \thepage  undefined on input lin
-e 183.
-
-
-LaTeX Warning: Citation `herlihy:methodology' on page \thepage  undefined on in
-put line 183.
-
-
-LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 1
-85.
-
-
-LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
-ine 185.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 185.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 191.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 202.
-
-
-LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 285.
-
-\c@theorem=\count115
-
-Underfull \hbox (badness 1603) in paragraph at lines 309--313
-[]\T1/aer/m/n/9 This uses the \T1/aer/bx/n/9 the-o-rem \T1/aer/m/n/9 en-vi-ron-
-ment, cre-ated by the
- []
-
-\c@definition=\count116
-[3]
-Overfull \hbox (15.60826pt too wide) detected at line 365
-\OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm
-/m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \OML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cm
-m/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9 ^^A [] [] \OT1/cmr/m/n/9 = 0 \OMS/cm
-sy/m/n/9 ^^A \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
- []
-
-
-LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
-ine 375.
-
-No file abstract.bbl.
-[4]
-Overfull \vbox (33.5pt too high) has occurred while \output is active []
-
- [5
-
-]
-(./abstract.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
+] (./abstract.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2863 strings out of 493304
- 36135 string characters out of 6139871
- 102845 words of memory out of 5000000
- 6233 multiletter control sequences out of 15000+600000
- 58528 words of font info for 82 fonts, out of 8000000 for 9000
+ 2798 strings out of 493304
+ 35491 string characters out of 6139871
+ 97845 words of memory out of 5000000
+ 6193 multiletter control sequences out of 15000+600000
+ 43678 words of font info for 60 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,10n,28p,844b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,28p,844b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
-i8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on abstract.pdf (5 pages, 201571 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
+8a.pfb>
+Output written on abstract.pdf (2 pages, 205285 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 33 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
