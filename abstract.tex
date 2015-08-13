@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \begin{document}
 
-\title{Learning PSRs with The Base System}
+\title{Spectral learning for structured partially observable environments}
 
 \numberofauthors{1}
 
@@ -19,21 +19,30 @@ Lucas Langer\\
 
 \section{Problem and Motivation}
 
-We consider the problem of learning models of time series data in partially observable environments. Typical applications arise in robotics and reinforcement learning, where hidden markov models (HMMs) are often the model of choice. We take particular interest in the class of partially observable systems which are compressible, namely systems in which one can achieve good performance with a smaller model. There exists a well known spectral algorithm for learning a Predictive State Representation of the environment from empirical data \cite{bowman:reasoning}. Traditionally, truncation of learned PSRs has been performed naively. We provide an extension to [NAME]'s algorithm for improved learning of smaller models. In empirical tests, our approach strongly outperforms it's ancestor in both in predictive and computational performance.
+We consider the problem of learning models of time series data in partially observable environments. Typical applications arise in robotics and reinforcement learning with HMMs and POMDPs being the models of choice.
+e. We take particular interest in the class of partially observable systems structured such that one can achieve good performance with a smaller model. We call such systems compressible. Standard algorithms are not designed to exploit compressible environments. This is a problem as they arise in many practical applications. In our work, we focus on building on a previous algorithm to exploit compressible structure. In empirical tests, our approach strongly outperforms it's ancestor in both in predictive and computational performance.
 
 \section{Background and Related Work}
 
-Predictive state representations are used as a model for computing the probability of observations in a dynamical system. [NAME] gives an algorithm which makes use of Hankel matrices and a singular value decomposition to obtain a PSR from data. One can control the number of states in the PSR by only including states with high singular values. The reason for using less states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
+Predictive state representations are used as a model for computing the probability of observations in a dynamical system. [NAME] give a spectral algorithm which learns a PSR from emperical data. The algorithm makes use of Hankel matrices and a singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using less states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
-Previous work with PSR learning has included planning [pierre luc] and natural language processing [other source]. Our work focuses on improving the learning of PSRs for general applications.
+%2002 PSR 
+%2005 learning
+%2011 spectral learning
+%2014 weighted automata hankel
+
+The development of PSRs has been built up over time as a way of developing a theoretically robust algorithm for partially observable environments. 
+
+On the applied side, previous work with PSR learning has included planning applications through the use of timing [pierre luc] and natural language processing for making predictions about[SOMETHING] [other source]. 
 
 \section{Approach and Uniqueness} 
 
-In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. This extra machinery allows us to  richly express state transitions with truncated models and provides better experimental performance. We first apply the Base System to timing applications where its construction is easiest to standardize. We then progress to the general case of systems with multiple observations and develop a heuristic for constructing the Base System effectively from data.
+In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. This extra machinery allows us to  richly express state transitions with truncated models and provides better experimental performance. 
+% give the intuition about what it does
+We first apply the Base System to timing applications where its construction is easiest to standardize. We then progress to the general case of systems with multiple observations and develop a heuristic for constructing the Base System effectively from data.
 
 \section{Results and Contributions}
 
-\subsection{Preliminaries}
 In the experiments that follow, we produce observations by simulating robot motion in labyrinth environments. We compare PSRs which use the Base System to different degrees. To measure performance, the predictions of learned PSR are compared to the actual probability distribution of the observations. 
 
 
@@ -55,7 +64,7 @@ In the first experiment we look at the time spent in double loop labyrinths.
 \caption{No noise \label{overflow}}
 \end{figure}
 
-
+%ROBOT INSIDE DOULBE LOOP, GET RID OF SYMMETRY
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/doubleloop0_1.png}
@@ -99,10 +108,12 @@ Next, we change our set of observations to wall colors of the labyrinth.
 \caption{Predicting wall colors \label{overflow}}
 \end{figure}
 
-Here, the Base system outperforms that naive approach by 55\%. For this environment, we construct the Base System separately for each symbol. In general, one might want to use a custom heuristic to optimize the construction.
+Here, the Base System outperforms that naive approach by 55\%. For this environment, we construct the Base System separately for each symbol. In general, one might want to use a custom heuristic to optimize the construction.
 
-\subsection{Relevance}
-The spectral framework for learning in partially observable environments has better theoretical guarantees [REFERENCE] than non-spectral methods. In this work, we showed a way to significantly improve results in practical settings, that is when one wants a smaller model. In future work, we hope to see a theoretical analysis of the apparent improvement of the Base System and optimization of it's construction.
+%Cite figures
+
+\section{Conclusion and Future Work}
+The spectral framework for learning in partially observable environments has better theoretical guarantees [REFERENCE] than non-spectral methods. In this work, we showed a way to significantly improve results in structured environments, that is when one wants a smaller model. In future work, we hope to see a theoretical analysis of the apparent improvement of the Base System and optimization of it's construction.
 \begin{comment}
 This is \textit{italic}, \textbf{bold}, \textsc{small caps}, \textsf{sans serif}
 
