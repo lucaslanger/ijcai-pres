@@ -1,8 +1,8 @@
 \documentclass{acm_proc_article-sp}
-
+\usepackage{verbatim}
 \begin{document}
 
-\title{Improving the learning of Predictive State Representations in partially observable environments}
+\title{Learning PSRs with The Base System}
 
 \numberofauthors{1}
 
@@ -20,28 +20,34 @@ Lucas Langer\\
 
 % how to do subsections: \subsection{Another}
 
-We consider the problem of learning models of time series data in partially observable environments. Typical applications arise in robotics and reinforcement learning, where hidden markov models (HMMs) are often the model of choice. We take particular interest in the class of compressible HMMs, namely HMMs for which one can achieve good performance with a reduced number of latent states. There exists a well known spectral algorithm for learning a Predictive State Representation from empirical data [NAME]. When the environment is compressible, this learning algorithm generates a PSR which has far more states than are needed for good performance. We provide an extension to [NAME]'s algorithm for truncated models. In empirical tests, our approach strongly outperforms our algorithm's ancestor in both in predictive and computational performance.
+We consider the problem of learning models of time series data in partially observable environments. Typical applications arise in robotics and reinforcement learning, where hidden markov models (HMMs) are often the model of choice. We take particular interest in the class of partially observable systems which are compressible, namely systems in which one can achieve good performance with a smaller model. There exists a well known spectral algorithm for learning a Predictive State Representation of the environment from empirical data [NAME]. Traditionally, truncation of this learned PSR has been performed naively. We provide an extension to [NAME]'s algorithm for improved learning of smaller models. In empirical tests, our approach strongly outperforms it's ancestor in both in predictive and computational performance.
 
 \section{Background and Related Work}
 
-Predictive state representations are used as a model for predicting observations made in a dynamical system. [NAME] gives an algorithm which makes use of Hankel Matrices and a singular value decomposition to obtain a PSR from data. One can control the number of states in the PSR by selecting the states with higher singular values. The reason for using less states is twofold. First, noise in empirical data creates artificial states with low singular values. Secondly, reducing the number of states is often necessary for computational performance. 
+Predictive state representations are used as a model for predicting the probability of observations in a dynamical system. [NAME] gives an algorithm which makes use of Hankel matrices and a singular value decomposition to obtain a PSR from data. One can control the number of states in the PSR by including states with highest singular values. The reason for using less states is twofold. First, noise in empirical data artificial creates states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
-While others have worked on using the above method to make planning decisions [pierre luc] or in natural language processing [other source], our work focuses on improving the learning of the PSRs under truncated model sizes. 
+Previous work with PSR learning has included planning [pierre luc] and natural language processing [other source]. Our work focuses on improving the learning of PSRs for general applications.
 
 \section{Approach and Uniqueness} 
 
-In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call The Base System. This extra machinery allows us to richly express transitions between states for truncated models. We first apply this system to timing applications where the construction of the Base is easier to standardize. We then progress to the general case of systems with multiple observations and develop a heuristic for constructing the Base System effectively from data.
+In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call The Base System. This extra machinery allows us to  richly express state transitions with truncated models and provides better experimental performance. We first apply this system to timing applications where the construction of the Base System is easiest to standardize. We then progress to the general case of systems with multiple observations and develop a heuristic for constructing the Base System effectively from data.
 
 \section{Results and Contributions}
 
-For the experiments that follow, we produce observations by simulating robot motion in labyrinth environments. We learn one PSR with the base system and one without. TO measure performance, the predictions of each PSR are compared to the actual probability distribution of the observations. 
+\subsection{Experiments}
+In the experiments that follow, we produce observations by simulating robot motion in labyrinth environments. We compare PSRs which use the base system to different degrees. To measure performance, the predictions of each PSR are compared to the actual probability distribution of the observations. 
 
-In the first experiment we look at the time spent in double loop systems. In both systems, the PSR with the Base System has 100 \% less error than without. Note how much of a difference there is in compression in the two systems because of the self-transition. 
+In the first experiment we look at the time spent in double loop systems. In both cases, the PSR with the Base System has 100 \% less error than without. In particular, we note that noise in the durations of loops doesn't harm the performance of the Base.
 
-In the second experiment, we look at timing again for a larger labyrinth. We also use state representations from the learned PSR's to make predictions about distances to objects. 
+In the second experiment, we look at timing for a PacMan-Type labyrinth. In addition, we use state weightings from the learned PSRs to predict distances between the robot and objects in the environment. 
+
+We now extend our set of observations to multiple wall colors rather than the single observation case of time. Our base system expands by including powers of all symbols. Note that in some environments, powers of a mixture of symbols may be the way to go. We leave the decision of choosing powers up to the user, as it is dependent on the choice of application.
+
+\subsection{Relevance}
+The spectral framework for learning in partially observable environments has better theoretical guarantees [REFERENCE] than non-spectral methods. In this work, we showed a way to significantly improve results in practical settings, that is when one wants a smaller model. In future work, we hope to see a theoretical analysis of the apparent improvement and optimization in how one constructs the Base System for the multiple observation case. 
 
 
-
+\begin{comment}
 This is \textit{italic}, \textbf{bold}, \textsc{small caps}, \textsf{sans serif}
 
 Math is writen inside dollars: $a = b$, $a_k$, $b^s$, $a_k^j$, $a_{opt}^{\star}$ $\sin(2 \pi) = 0$, greek letters are intuitive $\alpha$, $\beta$, $\sigma$, $\Sigma$, $\Gamma$, and so on
@@ -50,6 +56,8 @@ Full line equations use 2 dollars
 $$ \sum_{i=0}^{\infty} \gamma^i = \frac{1}{1-\gamma} $$
 
 Other math symbols $a \in A \cap B \subseteq C \equiv X \sim Y \leq Z$
+\end{comment}
+
 
 The \textit{proceedings} are the records of a conference.
 ACM seeks to give these conference by-products a uniform,
