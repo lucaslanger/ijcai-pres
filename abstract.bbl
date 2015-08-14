@@ -1,8 +1,35 @@
 \begin{thebibliography}{1}
 
-\bibitem{bowman:reasoning}
-M.~Bowman, S.~K. Debray, and L.~L. Peterson.
-\newblock Reasoning about naming systems.
-\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):795--825, November 1993.
+\bibitem{pierrelucplanning2015}
+P.-L. Bacon, B.~Balle, and D.~Precup.
+\newblock Learning and planning with timing information in markov decision
+  processes.
+\newblock {\em 2nd Multidisciplinary Conference on Reinforcement Learning and
+  Decision Making}, 2015.
+
+\bibitem{balle2013spectral}
+B.~Balle, X.~Carreras, F.~M. Luque, and A.~Quattoni.
+\newblock Spectral learning of weighted automata.
+\newblock {\em Machine Learning}, pages 1--31, 2013.
+
+\bibitem{boots2010closing}
+B.~Boots, S.~M. Siddiqi, and G.~J. Gordon.
+\newblock Closing the learning-planning loop with predictive state
+  representations.
+\newblock In {\em Proceedings of the 9th International Conference on Autonomous
+  Agents and Multiagent Systems: volume 1-Volume 1}, pages 1369--1370.
+  International Foundation for Autonomous Agents and, 2010.
+
+\bibitem{littman2001predictive}
+M.~L. Littman, R.~S. Sutton, and S.~P. Singh.
+\newblock Predictive representations of state.
+\newblock {\em NIPS}, 14:1555--1561, 2001.
+
+\bibitem{DBLP:conf/icml/Wiewiora05}
+E.~Wiewiora.
+\newblock Learning predictive representations from a history.
+\newblock In {\em Machine Learning, Proceedings of the Twenty-Second
+  International Conference {(ICML} 2005), Bonn, Germany, August 7-11, 2005},
+  pages 964--971, 2005.
 
 \end{thebibliography}

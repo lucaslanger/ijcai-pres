@@ -1,0 +1,38 @@
+@ARTICLE{bowman:reasoning,
+	AUTHOR = "Mic Bowman and Saumya K. Debray and Larry L. Peterson",
+	TITLE = "Reasoning About Naming Systems",
+	JOURNAL = "ACM Trans. Program. Lang. Syst.",
+	VOLUME = {15},
+	NUMBER = {5},
+	PAGES = {795-825},
+	MONTH = "November",
+	YEAR = {1993}	
+}
+
+@article{balle2013spectral,
+  title={Spectral learning of weighted automata},
+  author={Balle, Borja and Carreras, Xavier and Luque, Franco M and Quattoni, Ariadna},
+  journal={Machine Learning},
+  pages={1--31},
+  year={2013},
+  publisher={Springer US}
+}
+
+@inproceedings{boots2010closing,
+  title={Closing the learning-planning loop with predictive state representations},
+  author={Boots, Byron and Siddiqi, Sajid M and Gordon, Geoffrey J},
+  booktitle={Proceedings of the 9th International Conference on Autonomous Agents and Multiagent Systems: volume 1-Volume 1},
+  pages={1369--1370},
+  year={2010},
+  organization={International Foundation for Autonomous Agents and}
+}
+
+@Article{littman2001predictive,
+  title={Predictive representations of state.},
+  author={Littman, Michael L and Sutton, Richard S and Singh, Satinder P},
+  journal={NIPS},
+  volume={14},
+  pages={1555--1561},
+  year={2001}
+}
+

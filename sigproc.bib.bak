@@ -1,59 +1,51 @@
-@ARTICLE{bowman:reasoning,
-	AUTHOR = "Mic Bowman and Saumya K. Debray and Larry L. Peterson",
-	TITLE = "Reasoning About Naming Systems",
-	JOURNAL = "ACM Trans. Program. Lang. Syst.",
-	VOLUME = {15},
-	NUMBER = {5},
-	PAGES = {795-825},
-	MONTH = "November",
-	YEAR = {1993}	}
-
-@ARTICLE{braams:babel,
-	AUTHOR = "Johannes Braams",
-	TITLE = "Babel, a Multilingual Style-Option System for Use with LaTeX's Standard Document Styles",
-	JOURNAL = {TUGboat},
-	VOLUME = {12},
-	NUMBER = {2},
-	PAGES = {291-301},
-	MONTH = "June",
-	YEAR = {1991}	}
-
-@INPROCEEDINGS{clark:pct,
-	AUTHOR = "Malcolm Clark",
-	TITLE = "Post Congress Tristesse",
-	BOOKTITLE = "TeX90 Conference Proceedings",
-	PAGES = "84-89",
-	ORGANIZATION = "TeX Users Group",
-	MONTH = "March", 
-	YEAR = {1991}	}
-
-@ARTICLE{herlihy:methodology,
-	AUTHOR = "Maurice Herlihy",
-	TITLE = "A Methodology for Implementing Highly Concurrent
-	Data Objects",
-	JOURNAL = {ACM Trans. Program. Lang. Syst.},
-	VOLUME = {15},
-	NUMBER = {5},
-	PAGES = {745-770},
-	MONTH = "November",
-	YEAR = {1993}	}
-
-@BOOK{Lamport:LaTeX,
-	AUTHOR = "Leslie Lamport",
-	TITLE = "LaTeX User's Guide and Document Reference Manual",
-	PUBLISHER = "Addison-Wesley Publishing Company",
-	ADDRESS = "Reading, Massachusetts",
-	YEAR = "1986"	}
-
-@BOOK{salas:calculus,
-	AUTHOR = "S.L. Salas and Einar Hille",
-	TITLE = "Calculus: One and Several Variable",
-	PUBLISHER = "John Wiley and Sons",
-	ADDRESS = "New York",
-	YEAR = "1978"	}
 
 
+@article{pierrelucplanning2015,
+  title={Learning and Planning with Timing Information in Markov Decision Processes},
+  author={Pierre-Luc Bacon and Borja Balle and Doina Precup},
+  journal={2nd Multidisciplinary Conference on Reinforcement Learning and Decision Making},
+  year={2015},
+  publisher={RLDM}
+}
 
+@article{balle2013spectral,
+  title={Spectral learning of weighted automata},
+  author={Balle, Borja and Carreras, Xavier and Luque, Franco M and Quattoni, Ariadna},
+  journal={Machine Learning},
+  pages={1--31},
+  year={2013},
+  publisher={Springer US}
+}
 
+@inproceedings{DBLP:conf/icml/Wiewiora05,
+  author    = {Eric Wiewiora},
+  title     = {Learning predictive representations from a history},
+  booktitle = {Machine Learning, Proceedings of the Twenty-Second International Conference
+               {(ICML} 2005), Bonn, Germany, August 7-11, 2005},
+  pages     = {964--971},
+  year      = {2005},
+  crossref  = {DBLP:conf/icml/2005},
+  url       = {http://doi.acm.org/10.1145/1102351.1102473},
+  doi       = {10.1145/1102351.1102473},
+  timestamp = {Mon, 22 Oct 2007 13:52:21 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icml/Wiewiora05},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
 
+@inproceedings{boots2010closing,
+  title={Closing the learning-planning loop with predictive state representations},
+  author={Boots, Byron and Siddiqi, Sajid M and Gordon, Geoffrey J},
+  booktitle={Proceedings of the 9th International Conference on Autonomous Agents and Multiagent Systems: volume 1-Volume 1},
+  pages={1369--1370},
+  year={2010},
+  organization={International Foundation for Autonomous Agents and}
+}
 
+@Article{littman2001predictive,
+  title={Predictive representations of state.},
+  author={Littman, Michael L and Sutton, Richard S and Singh, Satinder P},
+  journal={NIPS},
+  volume={14},
+  pages={1555--1561},
+  year={2001}
+}
