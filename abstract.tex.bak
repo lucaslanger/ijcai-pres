@@ -23,19 +23,17 @@ We consider the problem of learning models of time series data in partially obse
 
 \section{Background and Related Work}
 
-Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system. \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and a singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using less states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
+Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and a singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using less states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
-Learning of PSRs began with the work of \cite{DBLP:conf/icml/Wiewiora05} who used non-spectral methods. Spectral methods emerged later and came in theoretical guarantees far better than other methods. \cite{boots2010closing}. Spectral learning of PSRs have also had applications in planning with timing predictions \cite{pierrelucplanning2015} and in natural language processing for dependency parsing. \cite{balle2013spectral}.
+Learning of PSRs began with the work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
 
 \section{Approach and Uniqueness} 
 
 In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to timing applications where choosing additional operators is easiest to do. We then progress to the general case of systems with multiple observations and develop a heuristic for choosing effective operators from data.
 
-%dynamic programming heuristic?
-
 \section{Results and Contributions}
 
-In the experiments that follow, we produce observations by simulating robot motion in stochastic labyrinth environments. The robot explores the labyrinths until it leaves through one of the doors. We compare PSRs which differ in how much they use the Base System. To measure performance, the predictions of learned PSRs are compared to the actual probability distribution over observations. 
+In the experiments that follow, we produce observations by simulating robot motion in stochastic labyrinth environments. The robot explores the labyrinths until it leaves through one of the doors. We compare PSRs learned with the generic algorithm to PSRs learned with different degrees of the Base System. To measure the performance of a PSR, we compare predictions to the actual probability distribution over observations. Alternatively, one could use cross-validation. 
 
 \subsection{Double Loops}
 
@@ -99,12 +97,13 @@ Next, we change our set of observations to wall colors of the labyrinth.
 \caption{Predicting wall colors \label{overflow}}
 \end{figure}
 
-Here, the Base System outperforms that naive approach by 55\%. For this environment, we construct the Base System separately for each symbol. In general, one might want to use a custom heuristic to optimize the construction.
+Here, the Base System outperforms that naive approach by 55\%. 
 
 %Cite figures
 
 \section{Relevance and Future Work}
-The spectral framework for learning in partially observable environments has better theoretical guarantees \cite{Lamport:LaTeX} than non-spectral methods. In this work, we showed a way to significantly improve results when one wants a smaller model of the environment as often occurs in practice. In future work, we hope to see a theoretical analysis of the apparent improvement of the Base System and further optimization of it's construction.
+The spectral framework for learning in partially observable environments has better theoretical guarantees than non-spectral methods \cite{balle2013spectral}. In this work, we showed a way to significantly improve performance of truncated models in applied environments. In future work, we hope to see a theoretical analysis of the apparent improvement from the Base System and further optimization of it's construction.
+
 \begin{comment}
 This is \textit{italic}, \textbf{bold}, \textsc{small caps}, \textsf{sans serif}
 
@@ -129,12 +128,7 @@ Other math symbols $a \in A \cap B \subseteq C \equiv X \sim Y \leq Z$
 %
 % ACM needs 'a single self-contained file'!
 %.
-\subsection{References}
-Generated by bibtex from your ~.bib file.  Run latex,
-then bibtex, then latex twice (to resolve references)
-to create the ~.bbl file.  Insert that ~.bbl file into
-the .tex source file and comment out
-the command \texttt{{\char'134}thebibliography}.
+
 
 \end{document}
 
