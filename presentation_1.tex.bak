@@ -84,7 +84,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Short title]{Spectral learning for structured partially observable environments} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Spectral learning with structure]{Spectral learning for structured partially observable environments} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Lucas Langer} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -155,7 +155,7 @@ $f(abaaba) = \alpha*A_a*A_b*A_a*A_a*A_b*\beta$
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Bullet Points}
+\frametitle{HMMs}
 \begin{itemize}
 \item HMMs are an example of PSRs
 
@@ -175,19 +175,19 @@ $f(abaaba) = \alpha*A_a*A_b*A_a*A_a*A_b*\beta$
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{A Learning Algorithm}
+\frametitle{Why PSRs?}
 \begin{itemize}
-\item Turns out that with spectral can learn PSRs from data, but learning HMMs cannot be done.
+\item For global optimum can learn a PSR but not an HMM
 
-\item $<\alpha, {A_x}, \beta>$ v.s $<\alpha*M^-1, M*{A_x}*M^-1, M*\beta>$
+\item Computational Equivalence of PSRs
 
-\item $A_x = O_x*T_x$
+ $<\alpha, {A_x}, \beta>$ v.s $<\alpha*M^-1, M*{A_x}*M^-1, M*\beta>$
+ 
+$f(x) = (\alpha*M_-1)*(M*A_x*M_-1)*(M*\beta) $
 
-\item $O_x$ being an observation matrix
-
-\item $T_x$ being a transition matrix
-
-\item So why bother the general framework of PSRs?
+$= \alpha*(M_-1*M)*A_x*(M_-1*M)*\beta)$
+ 
+$= \alpha*A_x*\beta)$
 
 \end{itemize}
 \end{frame}
@@ -195,7 +195,7 @@ $f(abaaba) = \alpha*A_a*A_b*A_a*A_a*A_b*\beta$
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Blocks of Highlighted Text}
+\frametitle{Hankel Matrices}
 \begin{block}{Block 1}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
 \end{block}
@@ -212,7 +212,7 @@ Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenati
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Multiple Columns}
+\frametitle{Learning a PSR}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
@@ -230,11 +230,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \end{frame}
 
 %------------------------------------------------
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Learning a PSR Cont.}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth} % Left column and width
+\textbf{Heading}
+\begin{enumerate}
+\item Statement
+\item Explanation
+\item Example
+\end{enumerate}
+
+\column{.5\textwidth} % Right column and width
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+\end{columns}
+\end{frame}
+
 \section{The Base System}
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Table}
+\frametitle{The Base System}
+
+Number representations: $39 = 1*2^5 + 0*2^4 + 0*2^3 + 1*2^2 + 1*2^1 + 1*2^0$
+
+Timing Queries $f(a^39) = \alpha*A_a^32*A_a^4*A_a^2*A_a^1$
+
+Motivation: express longer transitions directly to avoid error compounding
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{The Base System Cont.}
+
+When taking a reduced model compounding errors are a threat
+
+Analogy to rounding:  Round(51.63*34.12) v.s Round(51.63) * Round(34.12)
+
+Using $\pi N States --> N' States$ as the projection operator (Borja's notation)
+
+$f_Base(x) =$
+
+$f_Naive(x) =$  
+
+
+\end{frame}
+
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Why would it help?}
 \begin{table}
 \begin{tabular}{l l l}
 \toprule
@@ -251,6 +304,99 @@ Treatment 3 & 0.0009271 & 0.296 \\
 
 %------------------------------------------------
 
+\section{Experimental Results}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Timing in Labyrinths}
+\begin{table}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Multiple Observations}
+\begin{table}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\section{Computing and Learning the Base System}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Picking the Base System}
+\begin{itemize}
+\item For timing the GCD is of interest
+
+\item In general, one wants long and frequent sub-strings 
+
+\item Want to make sure Base System is diverse
+
+\item Iterative greedy heuristic 
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Computing with the Base System}
+\begin{itemize}
+
+\item Goal of Heuristic: minimize matrices in query
+
+\item Solution: Dynamic programming + trip’s
+
+\item Example: 
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{Questions? Comments?}}
+\end{frame}
+
+%					DONE
+
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+
+%					DONE
+
+%------------------------------------------------
+
+
 \begin{frame}
 \frametitle{Theorem}
 \begin{theorem}[Mass--energy equivalence]
@@ -258,7 +404,6 @@ $E = mc^2$
 \end{theorem}
 \end{frame}
 
-%------------------------------------------------
 
 \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
 \frametitle{Verbatim}

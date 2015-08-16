@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  15 AUG 2015 17:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  16 AUG 2015 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,23 +897,42 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [9
 
-]
-\openout4 = `presentation_1.vrb'.
-
- (./presentation_1.vrb) [10
+] [10
 
 ] [11
 
+] [12
+
+] [13
+
+] [14
+
+]
+Missing character: There is no â in font cmss10!
+Missing character: There is no € in font cmss10!
+Missing character: There is no ™ in font cmss10!
+ [15
+
+] [16
+
+] [17
+
 ]
 \openout4 = `presentation_1.vrb'.
 
- (./presentation_1.vrb) [12
+ (./presentation_1.vrb)
+[18
+
+] [19
 
 ]
-[13
+\openout4 = `presentation_1.vrb'.
 
- </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
-[14
+ (./presentation_1.vrb) [20
+
+] [21
+
+ </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>] [22
 
 ]
 \tf@nav=\write6
@@ -925,25 +944,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write8
 \openout8 = `presentation_1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 316.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 316.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 461.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 461.
  (./presentation_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 316.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 316.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 461.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 461.
 Package rerunfilecheck Info: File `presentation_1.out' has not changed.
-(rerunfilecheck)             Checksum: 41E13BAAE20D65C4E6FB343CBD431A43;114.
+(rerunfilecheck)             Checksum: 6753C79A0B313786FA01401B26CDD0F4;242.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 316.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
  ) 
 Here is how much of TeX's memory you used:
- 15910 strings out of 493304
- 297419 string characters out of 6139871
- 375639 words of memory out of 5000000
- 18946 multiletter control sequences out of 15000+600000
+ 15954 strings out of 493304
+ 297807 string characters out of 6139871
+ 375660 words of memory out of 5000000
+ 18972 multiletter control sequences out of 15000+600000
  12301 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,16n,66p,403b,805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -960,10 +979,10 @@ msfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation_1.pdf (14 pages, 169039 bytes).
+Output written on presentation_1.pdf (22 pages, 188215 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 434 compressed objects within 5 object streams
- 32 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 712 PDF objects out of 1000 (max. 8388607)
+ 650 compressed objects within 7 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
