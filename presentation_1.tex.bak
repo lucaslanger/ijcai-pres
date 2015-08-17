@@ -116,140 +116,18 @@ McGill University \\ % Your institution for the title page
 
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
-\begin{frame}
-\frametitle{PSRs}
-Predictive state representations (PSRs) are for computing a probability distribution over observations in a dynamical system [Littman et al.]
-
-Also known as Weighted Automata (motivation dependent)
-
-PSRs compute a function on finite strings of observations sequences f(abaab...).
-
-Defined by three parameters:   $<\alpha, {A_x}, \beta>$
-
-$\alpha$ : Weighting on states E.g $\alpha = [0.5, 0.5]$
-
-$A_x$ : Transition operator for symbol x  
-
-\[
-A_x=
-  \begin{bmatrix}
-    1 & 2 & 3 & 4 & 5 \\
-    3 & 4 & 5 & 6 & 7
-  \end{bmatrix}
-\]
-
-$\beta$ : Normalizer on states E.g 
-
-\[
-M=
-  \begin{bmatrix}
-    1 & 2 \\
-  \end{bmatrix}
-\]
-
-$f(abaaba) = \alpha*A_a*A_b*A_a*A_a*A_b*\beta$
-
- 
-\end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
-\frametitle{HMMs}
+\frametitle{The Timing Case}
+
 \begin{itemize}
-\item HMMs are an example of PSRs
-
-\item $A_x = O_x*T_x$
-
-\item $O_x$ being an observation matrix
-
-\item $T_x$ being a transition matrix
-
-\item So why bother the general framework of PSRs?
-
+\item For the timing case $\sum = \{\sigma\}$
+\item An observation of duration k is denoted by $\sigma^k$
+\item WFA will be = $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
+\item $f_A(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
+\item Blackboard: A spectral learning algorithm for WFA 
 \end{itemize}
-\end{frame}
 
-%------------------------------------------------
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Why PSRs?}
-\begin{itemize}
-\item For global optimum can learn a PSR but not an HMM
-
-\item Computational Equivalence of PSRs
-
- $<\alpha, {A_x}, \beta>$ v.s $<\alpha*M^-1, M*{A_x}*M^-1, M*\beta>$
- 
-$f(x) = (\alpha*M_-1)*(M*A_x*M_-1)*(M*\beta) $
-
-$= \alpha*(M_-1*M)*A_x*(M_-1*M)*\beta)$
- 
-$= \alpha*A_x*\beta)$
-
-\end{itemize}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Hankel Matrices}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Learning a PSR}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Learning a PSR Cont.}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
 \end{frame}
 
 \section{The Base System}
@@ -257,52 +135,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 
 \begin{frame}
 \frametitle{The Base System}
+\begin{itemize}
 
-Number representations: $39 = 1*2^5 + 0*2^4 + 0*2^3 + 1*2^2 + 1*2^1 + 1*2^0$
+\item Number representations: $39 = 1*2^5 + 0*2^4 + 0*2^3 + 1*2^2 + 1*2^1 + 1*2^0$
 
-Timing Queries $f(a^39) = \alpha*A_a^32*A_a^4*A_a^2*A_a^1$
+\item Timing queries $f(a^39) = \alpha*A_a^32*A_a^4*A_a^2*A_a^1$
 
-Motivation: express longer transitions directly to avoid error compounding
+\item Motivation: express transitions directly to avoid error build up
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{The Base System Cont.}
+\begin{itemize}
 
-When taking a reduced model compounding errors are a threat
+\item When taking a reduced model compounding errors are a threat
 
-Analogy to rounding:  Round(51.63*34.12) v.s Round(51.63) * Round(34.12)
+\item Analogy to rounding:  Round(51.63*34.12) v.s Round(51.63) * Round(34.12)
 
-Using $\pi N States --> N' States$ as the projection operator (Borja's notation)
+Let $\pi: N states --> N' states$ b the projection operator 
 
 $f_Base(x) =$
 
 $f_Naive(x) =$  
 
+\end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 
-
-\begin{frame}
-\frametitle{Why would it help?}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
 
 \section{Experimental Results}
 %------------------------------------------------
@@ -350,13 +214,16 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \begin{frame}
 \frametitle{Picking the Base System}
 \begin{itemize}
-\item For timing the GCD is of interest
 
 \item In general, one wants long and frequent sub-strings 
 
 \item Want to make sure Base System is diverse
 
-\item Iterative greedy heuristic 
+\item Solution: Greedy heuristic involving counting of sub-strings
+
+\item Examples:
+
+
 
 \end{itemize}
 \end{frame}
@@ -367,9 +234,9 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \frametitle{Computing with the Base System}
 \begin{itemize}
 
-\item Goal of Heuristic: minimize matrices in query
+\item Goal of Heuristic: minimize number of matrices in query
 
-\item Solution: Dynamic programming + trip’s
+\item Solution: Dynamic programming 
 
 \item Example: 
 

@@ -19,7 +19,7 @@ Lucas Langer\\
 
 \section{Problem and Motivation}
 
-We consider the problem of learning models of time series data in partially observable environments. Typical applications arise in robotics and reinforcement learning with HMMs and POMDPs being the models of choice. We take  interest in environments with structured observations. Standard learning algorithms are not designed to exploit patterns which arise in many practical applications. As a result, we focus on extending a current learning algorithm to exploit such structure. Our approach yields both better predictive accuracy and computational performance when learning compressed models as one does in practice. 
+We consider the problem of learning models of time series data in partially observable environments. Typical applications arise in robotics and reinforcement learning with HMMs and POMDPs being the models of choice. We take  interest in environments with structured observations. Standard learning algorithms are not designed to exploit patterns which arise in many practical applications. As a result, we focus on extending a current learning algorithm to exploit such structure. Our approach yields both better predictive accuracy and computational performance when learning smaller models as one does in practice. 
 
 \section{Background and Related Work}
 
@@ -29,11 +29,11 @@ Learning of PSRs began with the work on non-spectral methods \cite{DBLP:conf/icm
 
 \section{Approach and Uniqueness} 
 
-In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to timing applications where choosing additional operators is easiest to do. We then progress to the general case of systems with multiple observations and develop a heuristic for choosing effective operators from data.
+In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to predict the time spent by an agent in a stochastic environment. We then progress to systems with multiple observations. Finally, we develop two heuristics: one for choosing operators from data, and another for applying operators in an effective order.
 
 \section{Results and Contributions}
 
-In the experiments that follow, we produce observations by simulating robot motion in stochastic labyrinth environments. The robot explores the labyrinths until it leaves through one of the doors. We compare PSRs learned with the generic algorithm to PSRs learned with different degrees of the Base System. To measure the performance of a PSR, we compare predictions to the actual probability distribution over observations. Alternatively, one could use cross-validation. 
+In the experiments that follow, we produce observations by simulating robot motion in stochastic labyrinth environments. The robot explores the labyrinths until it leaves through one of the doors. We compare PSRs learned with the generic algorithm to PSRs learned with different degrees of the Base System. To measure the performance of a PSR, we compare predictions to the actual probability distribution over observations.
 
 \subsection{Double Loops}
 
@@ -43,20 +43,20 @@ In the first experiment we look at the time spent in double loop labyrinths.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/doubleLoopImage.png}
+\includegraphics[width=60mm]{lucasplots/monImages/doubleLoopImage.png}
 \caption{Double Loop Environment\label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/doubleloop0.png}
+\includegraphics[width=60mm]{lucasplots/monImages/DoubleLoopTiming0.png}
 \caption{No noise \label{overflow}}
 \end{figure}
 
 %ROBOT INSIDE DOULBE LOOP, GET RID OF SYMMETRY
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/doubleloop0_1.png}
+\includegraphics[width=60mm]{lucasplots/monImages/DoubleLoopTiming0_1.png}
 \caption{Corridor noise \label{overflow}}
 \end{figure}
 
@@ -74,14 +74,14 @@ In the second experiment, we look at timing for a PacMan-Type labyrinth. In addi
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/pacman10000.png}
+\includegraphics[width=60mm]{lucasplots/monImages/PacmanLabyrinth.png}
 \caption{Timing predictions in Pacman \label{overflow}}
 \end{figure}
 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/Distances.png}
+\includegraphics[width=60mm]{lucasplots/monImages/Distance_Predictions.png}
 \caption{Distance predictons from key \label{overflow}}
 \end{figure}
 
@@ -93,7 +93,7 @@ Next, we change our set of observations to wall colors of the labyrinth.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/MO:16,32.png}
+\includegraphics[width=60mm]{lucasplots/monImages/WallColorPredictions.png}
 \caption{Predicting wall colors \label{overflow}}
 \end{figure}
 
@@ -102,7 +102,7 @@ Here, the Base System outperforms that naive approach by 55\%.
 %Cite figures
 
 \section{Relevance and Future Work}
-The spectral framework for learning in partially observable environments has better theoretical guarantees than non-spectral methods \cite{balle2013spectral}. In this work, we showed a way to significantly improve performance of truncated models in applied environments. In future work, we hope to see a theoretical analysis of the apparent improvement from the Base System and further optimization of it's construction.
+The spectral framework for learning in partially observable environments has better theoretical guarantees than non-spectral methods \cite{balle2013spectral}. In this work, we showed a way to significantly improve performance of truncated models in applied environments. For future work, we leave a theoretical analysis of the Base System and further optimization of its construction .
 
 \begin{comment}
 This is \textit{italic}, \textbf{bold}, \textsc{small caps}, \textsf{sans serif}

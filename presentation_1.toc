@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{A Spectral Algorithm for PSRs}{3}{0}{1}
-\beamer@sectionintoc {2}{The Base System}{9}{0}{2}
-\beamer@sectionintoc {3}{Experimental Results}{12}{0}{3}
-\beamer@sectionintoc {4}{Computing and Learning the Base System}{14}{0}{4}
+\beamer@sectionintoc {2}{The Base System}{4}{0}{2}
+\beamer@sectionintoc {3}{Experimental Results}{6}{0}{3}
+\beamer@sectionintoc {4}{Computing and Learning the Base System}{8}{0}{4}
