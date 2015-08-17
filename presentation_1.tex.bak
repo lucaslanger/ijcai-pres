@@ -141,7 +141,9 @@ McGill University \\ % Your institution for the title page
 
 \item Timing queries $f(a^39) = \alpha*A_a^32*A_a^4*A_a^2*A_a^1$
 
-\item Motivation: express transitions directly to avoid error build up
+\item Motivation: 
+\item 1) express transitions directly to avoid error build up
+\item 2) faster queries. D
 \end{itemize}
 \end{frame}
 
@@ -155,11 +157,12 @@ McGill University \\ % Your institution for the title page
 
 \item Analogy to rounding:  Round(51.63*34.12) v.s Round(51.63) * Round(34.12)
 
-Let $\pi: N states --> N' states$ b the projection operator 
+\item Let $\pi$: n states --> k states be the projection operator from a system with n states to the k-best states
 
-$f_Base(x) =$
+\item
+$f_Base(\sigma^128) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 
-$f_Naive(x) =$  
+$f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$ 
 
 \end{itemize}
 
@@ -172,39 +175,57 @@ $f_Naive(x) =$
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Timing in Labyrinths}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\frametitle{Timing with the Base}
+Agent goes through loops until leaving through an exit state. Exit states have transition probabilities of 0.4 and 0.6. Loop lengths are 64 and 16.
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{lucasplots/monImages/doubleLoopImage.png}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
 
 
 \begin{frame}
-\frametitle{Multiple Observations}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\frametitle{Double Loop Results}
+
+$||f_A - f_ABar|| = (\sum (f_A(x) - f_ABar)^2)^(0.5)$ 
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\end{figure}
 \end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{PacMan Labyrinth Results}
+
+$||f_A - f_ABar|| = (\sum (f_A(x) - f_ABar)^2)^(0.5)$ 
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Distance Predictions}
+We use $\alpha_0*A_\sigma^k$ as a representation of state. Linear regression gives us a distance weighting on states.
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{lucasplots/monImages/Distance_Predictions.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Wall Color Predictions}
+We paint the first loop green and the second loop red.
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{lucasplots/monImages/WallColorPredictions.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
 
 %------------------------------------------------
 
@@ -219,11 +240,30 @@ Treatment 3 & 0.0009271 & 0.296 \\
 
 \item Want to make sure Base System is diverse
 
-\item Solution: Greedy heuristic involving counting of sub-strings
-
-\item Examples:
+\item Solution: Greedy heuristic 
 
 
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Picking the Base System Cont.}
+\begin{itemize}
+
+\item Algorithm:
+
+\item Pick sequence $x=x_1x_2...x_n$ whose operator reduces matrix products the most. This step depends on the current Base System!
+
+\item Update Base System by learning $A_x$
+
+\item Example: 
+	  Input Data: $\{a^20,a^30,a^50,b^5,b^10\}$
+	  
+\item Initial Base: $\{A_a, A_b\}$
+\item Iteration 1: $ A_a^10$ Added
+\item Iteration 2: $ A_b^10$ Added, NOT $A_a^5$
 
 \end{itemize}
 \end{frame}
@@ -261,67 +301,6 @@ Treatment 3 & 0.0009271 & 0.296 \\
 
 %					DONE
 
-%------------------------------------------------
-
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
 
 %----------------------------------------------------------------------------------------
 
