@@ -279,11 +279,15 @@ We paint the first loop green and the second loop red.
 \frametitle{Picking the Base System}
 \begin{itemize}
 
-\item In general, one wants \textbf{long} and \text{frequent} sub-strings 
+
+\item
+
+\item One wants \textbf{long} and \text{frequent} sub-strings 
 
 \item Want to make sure Base System is \textbf{diverse}
+\item[] I.e it needs to cover different types of common sub-strings
 
-\item Solution: Greedy heuristic 
+\item Solution: iterative greedy heuristic 
 
 
 \end{itemize}
