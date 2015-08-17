@@ -23,7 +23,7 @@ We consider the problem of learning models of time series data in partially obse
 
 \section{Background and Related Work}
 
-Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and a singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using less states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
+Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and a singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using fewer states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
 Learning of PSRs began with the work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
 
@@ -105,17 +105,6 @@ The Base System also does better for loops with multiple observations (Figure 7)
 
 \section{Relevance and Future Work}
 The spectral framework for learning in partially observable environments has better theoretical guarantees than non-spectral methods \cite{balle2013spectral}. In this work, we showed a way to significantly improve performance of truncated models in applied environments. For future work, we leave a theoretical analysis of the Base System and further optimization of its construction .
-
-\begin{comment}
-This is \textit{italic}, \textbf{bold}, \textsc{small caps}, \textsf{sans serif}
-
-Math is writen inside dollars: $a = b$, $a_k$, $b^s$, $a_k^j$, $a_{opt}^{\star}$ $\sin(2 \pi) = 0$, greek letters are intuitive $\alpha$, $\beta$, $\sigma$, $\Sigma$, $\Gamma$, and so on
-
-Full line equations use 2 dollars
-$$ \sum_{i=0}^{\infty} \gamma^i = \frac{1}{1-\gamma} $$
-
-Other math symbols $a \in A \cap B \subseteq C \equiv X \sim Y \leq Z$
-\end{comment}
 
 %
 % The following two commands are all you need in the
