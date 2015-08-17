@@ -50,17 +50,17 @@ In the first experiment we look at the time spent in double loop labyrinths.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/monImages/DoubleLoopTiming0.png}
-\caption{No noise \label{overflow}}
+\caption{No Noise in Loops \label{overflow}}
 \end{figure}
 
 %ROBOT INSIDE DOULBE LOOP, GET RID OF SYMMETRY
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/monImages/DoubleLoopTiming0_1.png}
-\caption{Corridor noise \label{overflow}}
+\caption{Noise in Loops \label{overflow}}
 \end{figure}
 
-In both cases, the PSR with the Base System significantly lower errors across all model sizes. In particular, we note that noise in the durations of loops doesn't harm the performance of the Base System.
+The PSR with the Base System significantly lower errors across all model sizes (Figures 2 and 3). In particular, we note that noise in the durations of loops doesn't harm the performance of the Base System.
 
 \subsection{PacMan Labyrinth}
 
@@ -70,7 +70,7 @@ In the second experiment, we look at timing for a PacMan-Type labyrinth. In addi
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/monImages/doubleLoopImageMO.png}
-\caption{Pacman Environment \label{overflow}}
+\caption{Multiple Observation Environment \label{overflow}}
 \end{figure}
 %\end{comment}
 
@@ -78,16 +78,16 @@ In the second experiment, we look at timing for a PacMan-Type labyrinth. In addi
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/monImages/PacmanLabyrinth.png}
-\caption{Timing predictions in Pacman \label{overflow}}
+\caption{Timing Predictions in Pacman \label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/monImages/Distance_Predictions.png}
-\caption{Distance predictons from key \label{overflow}}
+\caption{Distance Predictons\label{overflow}}
 \end{figure}
 
-Here, the Base System outperforms the naive PSR for the Pacman environment. It also performs slightly better for predicting distance. 
+The Base System outperforms the naive PSR for the Pacman environment (Figure 5). It also does better for predicting distances (Figure 6). 
 
 \subsection{Multiple Observations}
 
@@ -96,10 +96,10 @@ Next, we change our set of observations to wall colors of the labyrinth.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{lucasplots/monImages/WallColorPredictions.png}
-\caption{Predicting wall colors \label{overflow}}
+\caption{Predicting Wall Colors \label{overflow}}
 \end{figure}
 
-Again, the Base System does far better in making predictions than the naive method.
+The Base System also does better for loops with multiple observations (Figure 7).
 
 %Cite figures
 
