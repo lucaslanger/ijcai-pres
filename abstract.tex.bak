@@ -23,13 +23,13 @@ We consider the problem of learning models of time series data in partially obse
 
 \section{Background and Related Work}
 
-Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and a singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using fewer states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
+Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using fewer states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
-Learning of PSRs began with the work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
+Learning of PSRs began with work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
 
 \section{Approach and Uniqueness} 
 
-In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to predict the time spent by an agent in a stochastic environment. We then progress to systems with multiple observations. Finally, we develop two heuristics: one for choosing operators from data, and another for applying operators in an effective order.
+In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to predict the time spent by an agent in a stochastic environment. We then progress to systems with multiple observations. Finally, we develop two heuristics: one for choosing operators from data, and another for applying operators in an effective order. The former uses an iterative greedy algorithm while the latter uses a dynamic programming algorithm.
 
 \section{Results and Contributions}
 
@@ -49,14 +49,14 @@ In the first experiment we look at the time spent in double loop labyrinths.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/monImages/DoubleLoopTiming0.png}
+\includegraphics[width=80mm]{lucasplots/monImages/DoubleLoopTiming0.png}
 \caption{No Noise in Loops \label{overflow}}
 \end{figure}
 
 %ROBOT INSIDE DOULBE LOOP, GET RID OF SYMMETRY
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\includegraphics[width=80mm]{lucasplots/monImages/DoubleLoopTiming0_1.png}
 \caption{Noise in Loops \label{overflow}}
 \end{figure}
 
@@ -77,13 +77,13 @@ In the second experiment, we look at timing for a PacMan-Type labyrinth. In addi
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/monImages/PacmanLabyrinth.png}
+\includegraphics[width=80mm]{lucasplots/monImages/PacmanLabyrinth.png}
 \caption{Timing Predictions in Pacman \label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/monImages/Distance_Predictions.png}
+\includegraphics[width=80mm]{lucasplots/monImages/Distance_Predictions.png}
 \caption{Distance Predictons\label{overflow}}
 \end{figure}
 
@@ -95,7 +95,7 @@ Next, we change our set of observations to wall colors of the labyrinth.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{lucasplots/monImages/WallColorPredictions.png}
+\includegraphics[width=80mm]{lucasplots/monImages/WallColorPredictions.png}
 \caption{Predicting Wall Colors \label{overflow}}
 \end{figure}
 
@@ -104,7 +104,7 @@ The Base System also does better for loops with multiple observations (Figure 7)
 %Cite figures
 
 \section{Relevance and Future Work}
-The spectral framework for learning in partially observable environments has better theoretical guarantees than non-spectral methods \cite{balle2013spectral}. In this work, we showed a way to significantly improve performance of truncated models in applied environments. For future work, we leave a theoretical analysis of the Base System and further optimization of its construction .
+In this work, we showed a way to significantly improve performance of truncated models in applied environments. For future work, we leave a theoretical analysis of the Base System and further optimization of its construction .
 
 %
 % The following two commands are all you need in the

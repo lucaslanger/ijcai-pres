@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  17 AUG 2015 19:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  17 AUG 2015 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,20 +314,16 @@ File: lucasplots/monImages/DoubleLoopTiming0.png Graphic file (type png)
 <use lucasplots/monImages/DoubleLoopTiming0.png>
 Package pdftex.def Info: lucasplots/monImages/DoubleLoopTiming0.png used on inp
 ut line 52.
-(pdftex.def)             Requested size: 170.71652pt x 89.03526pt.
+(pdftex.def)             Requested size: 213.39566pt x 111.29991pt.
 
 <lucasplots/monImages/DoubleLoopTiming0_1.png, id=4, 971.88094pt x 509.65407pt>
 File: lucasplots/monImages/DoubleLoopTiming0_1.png Graphic file (type png)
 <use lucasplots/monImages/DoubleLoopTiming0_1.png>
 Package pdftex.def Info: lucasplots/monImages/DoubleLoopTiming0_1.png used on i
 nput line 59.
-(pdftex.def)             Requested size: 170.71652pt x 89.51741pt.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(pdftex.def)             Requested size: 213.39566pt x 111.89871pt.
 
-
- <./lucasplots/monImages/doubleLoopImage.png> <./lucasplots/monImages/DoubleLoo
-pTiming0.png>]
-<lucasplots/monImages/doubleLoopImageMO.png, id=17, 751.30687pt x 459.21562pt>
+<lucasplots/monImages/doubleLoopImageMO.png, id=5, 751.30687pt x 459.21562pt>
 File: lucasplots/monImages/doubleLoopImageMO.png Graphic file (type png)
 
 <use lucasplots/monImages/doubleLoopImageMO.png>
@@ -335,34 +331,36 @@ Package pdftex.def Info: lucasplots/monImages/doubleLoopImageMO.png used on inp
 ut line 72.
 (pdftex.def)             Requested size: 170.71652pt x 104.34209pt.
 
-<lucasplots/monImages/PacmanLabyrinth.png, id=18, 977.15062pt x 511.15968pt>
+<lucasplots/monImages/PacmanLabyrinth.png, id=6, 977.15062pt x 511.15968pt>
 File: lucasplots/monImages/PacmanLabyrinth.png Graphic file (type png)
 
 <use lucasplots/monImages/PacmanLabyrinth.png>
 Package pdftex.def Info: lucasplots/monImages/PacmanLabyrinth.png used on input
  line 80.
-(pdftex.def)             Requested size: 170.71652pt x 89.29828pt.
+(pdftex.def)             Requested size: 213.39566pt x 111.62871pt.
 
-<lucasplots/monImages/Distance_Predictions.png, id=19, 974.89218pt x 511.9125pt
->
+<lucasplots/monImages/Distance_Predictions.png, id=7, 974.89218pt x 511.9125pt>
 File: lucasplots/monImages/Distance_Predictions.png Graphic file (type png)
- <use lucasplots/monImages/Distance_Predictions.png>
+<use lucasplots/monImages/Distance_Predictions.png>
 Package pdftex.def Info: lucasplots/monImages/Distance_Predictions.png used on 
 input line 86.
-(pdftex.def)             Requested size: 170.71652pt x 89.6407pt.
+(pdftex.def)             Requested size: 213.39566pt x 112.05087pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-<lucasplots/monImages/WallColorPredictions.png, id=20, 933.4875pt x 512.66531pt
+
+ <./lucasplots/monImages/doubleLoopImage.png>]
+<lucasplots/monImages/WallColorPredictions.png, id=19, 933.4875pt x 512.66531pt
 >
 File: lucasplots/monImages/WallColorPredictions.png Graphic file (type png)
  <use lucasplots/monImages/WallColorPredictions.png>
 Package pdftex.def Info: lucasplots/monImages/WallColorPredictions.png used on 
 input line 98.
-(pdftex.def)             Requested size: 170.71652pt x 93.75424pt.
- (./abstract.bbl) [2 <./lucasplots/monImages/DoubleLoopTiming0_1.png> <./lucasp
-lots/monImages/doubleLoopImageMO.png> <./lucasplots/monImages/PacmanLabyrinth.p
-ng> <./lucasplots/monImages/Distance_Predictions.png> <./lucasplots/monImages/W
-allColorPredictions.png>]
-(./abstract.aux)
+(pdftex.def)             Requested size: 213.39566pt x 117.19086pt.
+ (./abstract.bbl) [2 <./lucasplots/monImages/DoubleLoopTiming0.png> <./lucasplo
+ts/monImages/DoubleLoopTiming0_1.png> <./lucasplots/monImages/doubleLoopImageMO
+.png> <./lucasplots/monImages/PacmanLabyrinth.png> <./lucasplots/monImages/Dist
+ance_Predictions.png> <./lucasplots/monImages/WallColorPredictions.png>] (./abs
+tract.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -370,7 +368,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2841 strings out of 493304
  36995 string characters out of 6139871
- 97907 words of memory out of 5000000
+ 98907 words of memory out of 5000000
  6224 multiletter control sequences out of 15000+600000
  46161 words of font info for 63 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -381,7 +379,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf
 nts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helve
 tic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on abstract.pdf (2 pages, 501601 bytes).
+Output written on abstract.pdf (2 pages, 501531 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
