@@ -79,6 +79,8 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{amsmath}
+\usepackage{verbatim}
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -118,14 +120,49 @@ McGill University \\ % Your institution for the title page
 
 
 \begin{frame}
-\frametitle{The Timing Case}
+\frametitle{Structure partially observable environments}
 
 \begin{itemize}
-\item For the timing case $\sum = \{\sigma\}$
-\item An observation of duration k is denoted by $\sigma^k$
-\item WFA will be = $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
-\item $f_A(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
-\item Blackboard: A spectral learning algorithm for WFA 
+\item Goal: Improve predictive performance
+\item Example: Pacman
+\item Plan: Represent structure in model
+
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{PSRs: The Timing Case}
+
+\begin{itemize}
+\item PSRs defined by = $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
+\item[] $\alpha_0$: initial weighting on n states
+\item[] $A_\sigma$ nxn transition matrix
+\item[] $\alpha_\infty$: normalizer n states
+\item[] $\sigma$ represents one time unit, $\sigma^k$ represents k time units
+\item PSRs compute probabilities of observations
+\item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
+\item PSRs can be used to represent the states of a system
+\item[] E.g: $\alpha_0*A_\sigma^k$
+ 
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Overview of Learning}
+
+\begin{itemize}
+\item Spectral algorithms can learn PSRs from Data
+\item Flavour of Algorithm: 
+\item[] Step 1: Represent Data as a matrix
+\item[] Step 2: Singular value decomposition
+\item[] Step 3: Pick Number of States for PSR
+\item[] Step 4: Learn the PSR with matrix computations
 \end{itemize}
 
 \end{frame}
@@ -137,18 +174,18 @@ McGill University \\ % Your institution for the title page
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Number representations: $39 = 1*2^5 + 0*2^4 + 0*2^3 + 1*2^2 + 1*2^1 + 1*2^0$
+\item Number representations: $11 = 2^3 + 2^1 + 2^0$
 
-\item Timing queries $f(a^39) = \alpha*A_a^32*A_a^4*A_a^2*A_a^1$
+\item Timing queries $f(a^11) = \alpha*A_(a^8)*A_(a^2)*A_(a^1)$
 
 \item Motivation: 
-\item 1) express transitions directly to avoid error build up
-\item 2) faster queries. D
+\item[] 1) Express transitions directly to avoid error build up
+\item[] 2) Faster queries. Discussion $\alpha_0*(A_\sigma)^k$
 \end{itemize}
 \end{frame}
 
 %------------------------------------------------
-
+\begin{comment}
 \begin{frame}
 \frametitle{The Base System Cont.}
 \begin{itemize}
@@ -167,6 +204,7 @@ $f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 \end{itemize}
 
 \end{frame}
+\end{comment}
 
 %------------------------------------------------
 
@@ -191,7 +229,9 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 $||f_A - f_ABar|| = (\sum (f_A(x) - f_ABar)^2)^(0.5)$ 
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/doubleLoopImage.png}
+
 \end{figure}
 \end{frame}
 
@@ -221,7 +261,10 @@ We use $\alpha_0*A_\sigma^k$ as a representation of state. Linear regression giv
 \frametitle{Wall Color Predictions}
 We paint the first loop green and the second loop red.
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{lucasplots/monImages/WallColorPredictions.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/WallColorPredictions.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/WallColorPredictions.png}
+
+
 \end{figure}
 \end{frame}
 
@@ -236,9 +279,9 @@ We paint the first loop green and the second loop red.
 \frametitle{Picking the Base System}
 \begin{itemize}
 
-\item In general, one wants long and frequent sub-strings 
+\item In general, one wants \textbf{long} and \text{frequent} sub-strings 
 
-\item Want to make sure Base System is diverse
+\item Want to make sure Base System is \textbf{diverse}
 
 \item Solution: Greedy heuristic 
 
@@ -249,21 +292,18 @@ We paint the first loop green and the second loop red.
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Picking the Base System Cont.}
+\frametitle{Computing with the Base System}
 \begin{itemize}
 
-\item Algorithm:
+\item Input String: "abcacb", Base System = $\{A_ab, A_bca, A_cb \}$ 
 
-\item Pick sequence $x=x_1x_2...x_n$ whose operator reduces matrix products the most. This step depends on the current Base System!
+\item Computing with Base is a string partitioning problem
 
-\item Update Base System by learning $A_x$
+\item Desired Partition: "a|bca|cb""
 
-\item Example: 
-	  Input Data: $\{a^20,a^30,a^50,b^5,b^10\}$
-	  
-\item Initial Base: $\{A_a, A_b\}$
-\item Iteration 1: $ A_a^10$ Added
-\item Iteration 2: $ A_b^10$ Added, NOT $A_a^5$
+\item General Goal: Minimize number of partitions
+
+\item Solution: Dynamic programming
 
 \end{itemize}
 \end{frame}
@@ -271,14 +311,15 @@ We paint the first loop green and the second loop red.
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Computing with the Base System}
+\frametitle{Conclusion and Future Work}
 \begin{itemize}
 
-\item Goal of Heuristic: minimize number of matrices in query
+\item There is still work to be done on PSR learning!
 
-\item Solution: Dynamic programming 
+\item What's left for the Base System?
+\item[] 1) Theoretical analysis
 
-\item Example: 
+\item[] 2) Further optimize construction  
 
 \end{itemize}
 \end{frame}
@@ -295,7 +336,7 @@ We paint the first loop green and the second loop red.
 %------------------------------------------------
 %------------------------------------------------
 %------------------------------------------------
-%------------------------------------------------
+%-----------------------------------------------
 %------------------------------------------------
 %------------------------------------------------
 
