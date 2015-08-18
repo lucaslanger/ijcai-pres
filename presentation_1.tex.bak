@@ -126,32 +126,20 @@ McGill University \\ % Your institution for the title page
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
-\textbf{Goal:}
+\textbf{Structured Environments}
 \begin{enumerate}
-\item Predictive performance
-\item Plan: Represent structure in model
+\item Goal: Predictions
+\item Plan: Exploit structure
 \item Example: Pacman
 
 \end{enumerate}
 
 \column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/pac-man.jpg}
+\end{figure}
 
 \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Structure partially observable environments}
-
-\begin{itemize}
-\item Goal: Improve predictive performance
-\item Example: Pacman
-\item Plan: Represent structure in model
-
-\end{itemize}
-
 \end{frame}
 
 %------------------------------------------------
@@ -160,13 +148,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \frametitle{PSRs: The Timing Case}
 
 \begin{itemize}
-\item PSRs defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
+\item Model environment with a Predictive state representation
+\item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
 \item[] $\alpha_0$: Initial weighting on states $1xn$
 \item[] $A_\sigma$ Transition matrix $nxn$
 \item[] $\alpha_\infty$: Normalizer $nx1$
 
 \item PSRs compute probabilities of observations
-\item[] $\sigma$ represents one time unit, $\sigma^k$ represents k time units
+\item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
 \item Examples of a PSRs: HMMs, POMDPs
  
@@ -197,9 +186,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Number representations: $11 = 2^3 + 2^1 + 2^0$
+\item Idea: include $\{A_a, A_{a^2}, A_{a^4}, ... A_{a^N}\}$ as additional operators
 
-\item Timing queries $f(a^11) = \alpha*A_(a^8)*A_(a^2)*A_(a^1)$
+\item Timing queries $f(a^{11}) = \alpha_0*A_{a^8}*A_{a^2}*A_{a^1}*\alpha_\infty$
 
 \item Motivation: 
 \item[] 1) Express transitions directly to avoid error build up
