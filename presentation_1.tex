@@ -137,15 +137,15 @@ McGill University \\ % Your institution for the title page
 \frametitle{PSRs: The Timing Case}
 
 \begin{itemize}
-\item PSRs defined by = $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
-\item[] $\alpha_0$: initial weighting on n states
-\item[] $A_\sigma$ nxn transition matrix
-\item[] $\alpha_\infty$: normalizer n states
-\item[] $\sigma$ represents one time unit, $\sigma^k$ represents k time units
+\item PSRs defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
+\item[] $\alpha_0$: Initial weighting on states $1xn$
+\item[] $A_\sigma$ Transition matrix $nxn$
+\item[] $\alpha_\infty$: Normalizer $nx1$
+
 \item PSRs compute probabilities of observations
+\item[] $\sigma$ represents one time unit, $\sigma^k$ represents k time units
 \item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
-\item PSRs can be used to represent the states of a system
-\item[] E.g: $\alpha_0*A_\sigma^k$
+\item Examples of a PSRs: HMMs, POMDPs
  
 \end{itemize}
 
@@ -157,11 +157,11 @@ McGill University \\ % Your institution for the title page
 \frametitle{Overview of Learning}
 
 \begin{itemize}
-\item Spectral algorithms can learn PSRs from Data
-\item Flavour of Algorithm: 
-\item[] Step 1: Represent Data as a matrix
+\item Spectral algorithms can learn PSRs 
+\item Flavour of learning algorithm: 
+\item[] Step 1: Represent data as a matrix
 \item[] Step 2: Singular value decomposition
-\item[] Step 3: Pick Number of States for PSR
+\item[] Step 3: Pick number of states for PSR
 \item[] Step 4: Learn the PSR with matrix computations
 \end{itemize}
 
@@ -280,12 +280,13 @@ We paint the first loop green and the second loop red.
 \begin{itemize}
 
 
-\item
+\item How do we pick transition operators?
+\item[] Observations: \{$a^{30}$:10, $a^{60}$:5, $b^{18}$:15\}
 
-\item One wants \textbf{long} and \text{frequent} sub-strings 
+\item[] Desired Base System: {$A_a^{30}$, $A_b^{18}$, $A_a$, $A_b$}
 
-\item Want to make sure Base System is \textbf{diverse}
-\item[] I.e it needs to cover different types of common sub-strings
+\item Substring properties: 
+\textbf{long}, \textbf{frequent}, \textbf{diverse}
 
 \item Solution: iterative greedy heuristic 
 
@@ -299,15 +300,17 @@ We paint the first loop green and the second loop red.
 \frametitle{Computing with the Base System}
 \begin{itemize}
 
-\item Input String: "abcacb", Base System = $\{A_ab, A_bca, A_cb \}$ 
 
-\item Computing with Base is a string partitioning problem
+\item Using the Base System well involves requires good \textbf{string partitions}
 
-\item Desired Partition: "a|bca|cb""
+\item[] Query string: "abcacb", Base System = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
 
-\item General Goal: Minimize number of partitions
 
-\item Solution: Dynamic programming
+\item[] Desired partition: "a|bca|cb""
+
+\item Goal: minimize matrices used
+
+\item Solution: dynamic programming
 
 \end{itemize}
 \end{frame}
@@ -318,12 +321,13 @@ We paint the first loop green and the second loop red.
 \frametitle{Conclusion and Future Work}
 \begin{itemize}
 
-\item There is still work to be done on PSR learning!
-
 \item What's left for the Base System?
 \item[] 1) Theoretical analysis
 
-\item[] 2) Further optimize construction  
+\item[] 2) Test heuristics for selection and querying
+
+\item[] 3) Further optimize heuristics
+
 
 \end{itemize}
 \end{frame}
