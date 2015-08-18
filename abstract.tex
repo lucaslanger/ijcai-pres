@@ -23,7 +23,7 @@ We consider the problem of learning models of time series data in partially obse
 
 \section{Background and Related Work}
 
-Predictive state representations are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using fewer states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
+Predictive state representations (PSR) are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using fewer states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
 Learning of PSRs began with work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
 
@@ -64,7 +64,7 @@ The PSR with the Base System significantly lower errors across all model sizes (
 
 \subsection{PacMan Labyrinth}
 
-In the second experiment, we look at timing for a PacMan-Type labyrinth. In addition, we use state weightings from the learned PSRs to predict distances between the robot and objects in the environment. 
+In the second experiment, we look at timing for a PacMan-Type labyrinth. In addition, we use state weights from the learned PSRs to predict distances between the robot and objects in the environment. 
 
 %\begin{comment}
 \begin{figure}[ht!]
@@ -103,7 +103,7 @@ The Base System also does better for loops with multiple observations (Figure 7)
 
 %Cite figures
 
-\section{Relevance and Future Work}
+\section{Conclusion and Future Work}
 In this work, we showed a way to significantly improve performance of truncated models in applied environments. For future work, we leave a theoretical analysis of the Base System and further optimization of its construction .
 
 %

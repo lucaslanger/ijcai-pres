@@ -29,7 +29,7 @@ Learning of PSRs began with work on non-spectral methods \cite{DBLP:conf/icml/Wi
 
 \section{Approach and Uniqueness} 
 
-In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to predict the time spent by an agent in a stochastic environment. We then progress to systems with multiple observations. Finally, we develop two heuristics: one for choosing operators from data, and another for applying operators in an effective order. The former uses an iterative greedy algorithm while the latter uses a dynamic programming algorithm.
+In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to predict the time spent by an agent in a stochastic environment. We then progress to systems with multiple observations. Finally, we develop two heuristics: one for choosing operators from data, and another for applying operators in an effective order. The former uses an iterative greedy algorithm, while the latter uses a dynamic programming algorithm.
 
 \section{Results and Contributions}
 
@@ -49,14 +49,14 @@ In the first experiment we look at the time spent in double loop labyrinths.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{lucasplots/monImages/DoubleLoopTiming0.png}
+\includegraphics[width=75mm]{lucasplots/monImages/DoubleLoopTiming0.png}
 \caption{No Noise in Loops \label{overflow}}
 \end{figure}
 
 %ROBOT INSIDE DOULBE LOOP, GET RID OF SYMMETRY
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\includegraphics[width=75mm]{lucasplots/monImages/DoubleLoopTiming0_1.png}
 \caption{Noise in Loops \label{overflow}}
 \end{figure}
 
@@ -77,13 +77,13 @@ In the second experiment, we look at timing for a PacMan-Type labyrinth. In addi
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{lucasplots/monImages/PacmanLabyrinth.png}
+\includegraphics[width=75mm]{lucasplots/monImages/PacmanLabyrinth.png}
 \caption{Timing Predictions in Pacman \label{overflow}}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{lucasplots/monImages/Distance_Predictions.png}
+\includegraphics[width=75mm]{lucasplots/monImages/Distance_Predictions.png}
 \caption{Distance Predictons\label{overflow}}
 \end{figure}
 
@@ -95,7 +95,7 @@ Next, we change our set of observations to wall colors of the labyrinth.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{lucasplots/monImages/WallColorPredictions.png}
+\includegraphics[width=75mm]{lucasplots/monImages/WallColorPredictions.png}
 \caption{Predicting Wall Colors \label{overflow}}
 \end{figure}
 
