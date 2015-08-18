@@ -235,6 +235,41 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 %------------------------------------------------
 
+\begin{frame}
+\frametitle{Varying amount of data}
+
+\begin{itemize}
+\item The more data, the more effective the base
+
+\end{itemize}
+
+
+\begin{columns}[c]
+
+\column{.5\textwidth} % Left column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\end{figure}
+
+
+\column{.5\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\end{figure}
+
+\end{columns}
+
+\begin{itemize}
+
+
+\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\end{itemize}
+
+
+\end{frame}
+
+%------------------------------------------------
+
 
 \begin{frame}
 \frametitle{Varying noise in loops}
@@ -242,36 +277,29 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 \begin{itemize}
 \item Left Figure: No noise in durations
 \item Right Figure: Noise in loops
-\item Noise makes the loops more compressible
+
 \end{itemize}
-\begin{figure}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
 
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\begin{columns}[c]
+
+\column{.5\textwidth} % Left column and width
+\begin{figure}
+
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
 \end{figure}
-$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Varying amount of data}
-
-
+\column{.5\textwidth} % Right column and width
 \begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\end{figure}
+
+\end{columns}
 
 \begin{itemize}
-\item The more data, the more effective the base
+\item Noise allows for smaller models
 
 \end{itemize}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
 
-$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
-
-\end{figure}
 \end{frame}
 
 %------------------------------------------------
@@ -280,21 +308,28 @@ $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2
 \begin{frame}
 \frametitle{Pacman Labyrinth}
 
-\begin{figure}
-
 \begin{itemize}
 \item Left figure: Timing predictions
 \item Right figure: Distance predictions
 
 \end{itemize}
 
-\includegraphics[width=0.45\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
 
-\includegraphics[width=0.45\linewidth]{lucasplots/monImages/Distance_Predictions.png}
+\begin{columns}[c]
 
-$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
-
+\column{.5\textwidth} % Left column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
 \end{figure}
+
+
+\column{.5\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/Distance_Predictions.png}
+\end{figure}
+
+\end{columns}
+
 \end{frame}
 
 %------------------------------------------------
@@ -305,7 +340,6 @@ We paint the first loop green and the second loop blue.
 \begin{figure}
 \includegraphics[width=0.5\linewidth]{lucasplots/monImages/WallColorPredictions.png}
 \includegraphics[width=0.5\linewidth]{lucasplots/monImages/doubleLoopImageMO.png}
-
 
 \end{figure}
 \end{frame}
@@ -323,7 +357,7 @@ We paint the first loop green and the second loop blue.
 
 
 \item How do we pick transition operators?
-\item[] Observations: \{$a^{30}$:10, $a^{60}$:5, $b^{18}$:15\}
+\item[] Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
 
 \item[] Desired Base System: {$A_a^{30}$, $A_b^{18}$, $A_a$, $A_b$}
 

@@ -91,9 +91,10 @@
 \author{Lucas Langer} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
-McGill University \\ % Your institution for the title page
+%McGill University \\ % Your institution for the title page
+Supervisors: Borja Balle, Doina Precup \\
 \medskip
-\textit{lucas.langer@mail.mcgill.ca} % Your email address
+%\textit{lucas.langer@mail.mcgill.ca} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
 
@@ -192,7 +193,7 @@ McGill University \\ % Your institution for the title page
 
 \item Motivation: 
 \item[] 1) Express transitions directly to avoid error build up
-\item[] 2) Faster queries. Discussion $\alpha_0*(A_\sigma)^k$
+\item[] 2) Faster queries. Discussion: $M^k*v$
 \end{itemize}
 \end{frame}
 
@@ -238,20 +239,30 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 \begin{frame}
 \frametitle{Varying noise in loops}
 
-
-\begin{figure}
-
 \begin{itemize}
 \item Left Figure: No noise in durations
 \item Right Figure: Noise in loops
 \item Noise makes the loops more compressible
 \end{itemize}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
 
+\begin{columns}[c]
+
+\column{.5\textwidth} % Left column and width
+\begin{figure}
+
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\end{figure}
+
+
+\column{.5\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\end{figure}
+
+\end{columns}
 $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 
-\end{figure}
+
 \end{frame}
 
 %------------------------------------------------
@@ -259,19 +270,30 @@ $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2
 \begin{frame}
 \frametitle{Varying amount of data}
 
-
-\begin{figure}
-
 \begin{itemize}
 \item The more data, the more effective the base
 
 \end{itemize}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+
+
+\begin{columns}[c]
+
+\column{.5\textwidth} % Left column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\end{figure}
+
+
+\column{.5\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\end{figure}
+
+\end{columns}
 
 $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 
-\end{figure}
+
 \end{frame}
 
 %------------------------------------------------
@@ -280,51 +302,38 @@ $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2
 \begin{frame}
 \frametitle{Pacman Labyrinth}
 
-\begin{figure}
-
 \begin{itemize}
-\item Left figure: timing predictions
-\item Right figure: distance predictions
+\item Left figure: Timing predictions
+\item Right figure: Distance predictions
 
 \end{itemize}
-\includegraphics[width=0.8\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
 
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
 
-$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\begin{columns}[c]
 
+\column{.5\textwidth} % Left column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
 \end{figure}
+
+
+\column{.5\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/Distance_Predictions.png}
+\end{figure}
+
+\end{columns}
+
 \end{frame}
 
 %------------------------------------------------
-
-\begin{frame}
-\frametitle{PacMan Labyrinth Results}
-
-$||f_A - f_ABar|| = (\sum (f_A(x) - f_ABar)^2)^(0.5)$ 
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
-\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Distance Predictions}
-We use $\alpha_0*A_\sigma^k$ as a representation of state. Linear regression gives us a distance weighting on states.
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{lucasplots/monImages/Distance_Predictions.png}
-\end{figure}
-\end{frame}
 
 \begin{frame}
 \frametitle{Wall Color Predictions}
-We paint the first loop green and the second loop red.
+We paint the first loop green and the second loop blue.
 \begin{figure}
 \includegraphics[width=0.5\linewidth]{lucasplots/monImages/WallColorPredictions.png}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/WallColorPredictions.png}
-
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/doubleLoopImageMO.png}
 
 \end{figure}
 \end{frame}
@@ -342,7 +351,7 @@ We paint the first loop green and the second loop red.
 
 
 \item How do we pick transition operators?
-\item[] Observations: \{$a^{30}$:10, $a^{60}$:5, $b^{18}$:15\}
+\item[] Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
 
 \item[] Desired Base System: {$A_a^{30}$, $A_b^{18}$, $A_a$, $A_b$}
 
@@ -385,7 +394,7 @@ We paint the first loop green and the second loop red.
 \item What's left for the Base System?
 \item[] 1) Theoretical analysis
 
-\item[] 2) Test heuristics for selection and querying
+\item[] 2) Test heuristics on labyrinths
 
 \item[] 3) Further optimize heuristics
 
