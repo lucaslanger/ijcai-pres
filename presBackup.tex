@@ -123,7 +123,7 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Structured partially observable environments}
+\frametitle{Structure partially observable environments}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
@@ -150,12 +150,12 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{itemize}
 \item Model environment with a Predictive state representation
-\item For timing we have one observation symbol: {$\sigma$}
+\item For timing we have a one observation symbol {$\sigma$}
 \item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty>$
 \item[] $\alpha_0$: Initial weighting on states $1xn$
-\item[] $A_\sigma$: Transition matrix $nxn$
+\item[] $A_\sigma$ Transition matrix $nxn$
 \item[] $\alpha_\infty$: Normalizer $nx1$
-\item[]
+
 \item PSRs compute probabilities of observations
 \item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
@@ -168,9 +168,11 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Spectral Learning of PSRs}
+\frametitle{Overview of Learning}
 
 \begin{itemize}
+\item Spectral algorithms can learn PSRs 
+\item Flavour of learning algorithm: 
 \item[] Step 1: Represent data as a matrix
 \item[] Step 2: Singular value decomposition
 \item[] Step 3: Pick number of states for PSR
@@ -179,16 +181,16 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \end{frame}
 
-\section{The Base System: extending PSRs}
+\section{The Base System}
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Idea: Add $\{A_{\sigma}, A_{\sigma}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
+\item Idea: include $\{A_a, A_{a^2}, A_{a^4}, ... A_{a^N}\}$ as additional operators
 
-\item Timing queries: $f(\sigma^{11}) = \alpha_0*A_{\sigma^8}*A_{\sigma^2}*A_{\sigma^1}*\alpha_\infty$
+\item Timing queries $f(a^{11}) = \alpha_0*A_{a^8}*A_{a^2}*A_{a^1}*\alpha_\infty$
 
 \item Motivation: 
 \item[] 1) Express transitions directly to avoid error build up
@@ -278,15 +280,11 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 \begin{frame}
 \frametitle{Varying noise in loops}
 
+\begin{itemize}
+\item Left Figure: No noise in durations
+\item Right Figure: Noise in loops
 
-%\begin{itemize}
-%\item Left Figure: No noise in durations
-%\item Right Figure: Noise in loops
-
-%\end{itemize}
-
-\hspace{1cm}No noise in durations
-\hspace{3cm}Noise in durations
+\end{itemize}
 
 \begin{columns}[c]
 
@@ -317,14 +315,12 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 \begin{frame}
 \frametitle{Pacman Labyrinth}
 
-%\begin{itemize}
-%\item Left figure: Timing predictions
-%\item Right figure: Distance predictions
-%\end{itemize}
+\begin{itemize}
+\item Left figure: Timing predictions
+\item Right figure: Distance predictions
 
+\end{itemize}
 
-\hspace{1cm} Timing Predictions
-\hspace{3cm} Distance Predictions
 
 \begin{columns}[c]
 
@@ -341,11 +337,6 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 \end{columns}
 
-\begin{itemize}
-
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
-\end{itemize}
-
 
 \end{frame}
 
@@ -353,18 +344,12 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 \begin{frame}
 \frametitle{Wall Color Predictions}
-We paint the first loop green and the second loop blue
+We paint the first loop green and the second loop blue.
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{lucasplots/monImages/WallColorPredictions.png}
-\includegraphics[width=0.4\linewidth]{lucasplots/monImages/doubleLoopImageMO.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/WallColorPredictions.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/doubleLoopImageMO.png}
 
 \end{figure}
-
-\begin{itemize}
-
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
-\end{itemize}
-
 \end{frame}
 
 %------------------------------------------------
@@ -379,7 +364,7 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 
-\item Picking operators to exploit structure
+\item How do we pick transition operators?
 \item[] Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
 
 \item[] Desired Base System: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
