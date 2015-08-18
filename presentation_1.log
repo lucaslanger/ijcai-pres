@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  18 AUG 2015 12:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  18 AUG 2015 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -879,101 +879,111 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./presentation_1.toc)
 [2
 
-] [3
-
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 152.
+LaTeX Font Info:    Try loading font information for U+msa on input line 143.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 152.
+LaTeX Font Info:    Try loading font information for U+msb on input line 143.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+)
+<lucasplots/pac-man.jpg, id=105, 1927.2pt x 1204.5pt>
+File: lucasplots/pac-man.jpg Graphic file (type jpg)
+
+<use lucasplots/pac-man.jpg>
+Package pdftex.def Info: lucasplots/pac-man.jpg used on input line 143.
+(pdftex.def)             Requested size: 171.14764pt x 106.96674pt.
+ [3
+
+ <./lucasplots/pac-man.jpg>] [4
 
 ] [5
 
 ] [6
 
 ]
-<lucasplots/monImages/doubleLoopImage.png, id=214, 751.30687pt x 459.21562pt>
+[7
+
+]
+<lucasplots/monImages/doubleLoopImage.png, id=243, 751.30687pt x 459.21562pt>
 File: lucasplots/monImages/doubleLoopImage.png Graphic file (type png)
 
 <use lucasplots/monImages/doubleLoopImage.png>
 Package pdftex.def Info: lucasplots/monImages/doubleLoopImage.png used on input
- line 221.
+ line 246.
 (pdftex.def)             Requested size: 273.83728pt x 167.37756pt.
- [7
+ [8
 
  <./lucasplots/monImages/doubleLoopImage.png>]
-<lucasplots/monImages/DoubleLoopTiming0.png, id=245, 977.15062pt x 509.65407pt>
+<lucasplots/monImages/DoubleLoopTiming0.png, id=274, 977.15062pt x 509.65407pt>
 File: lucasplots/monImages/DoubleLoopTiming0.png Graphic file (type png)
 <use lucasplots/monImages/DoubleLoopTiming0.png>
 Package pdftex.def Info: lucasplots/monImages/DoubleLoopTiming0.png used on inp
-ut line 236.
+ut line 261.
 (pdftex.def)             Requested size: 171.14764pt x 89.26079pt.
 File: lucasplots/monImages/doubleLoopImage.png Graphic file (type png)
 
 <use lucasplots/monImages/doubleLoopImage.png>
 Package pdftex.def Info: lucasplots/monImages/doubleLoopImage.png used on input
- line 236.
+ line 261.
 (pdftex.def)             Requested size: 171.14764pt x 104.60835pt.
- [8
+ [9
 
  <./lucasplots/monImages/DoubleLoopTiming0.png>]
-<lucasplots/monImages/PacmanLabyrinth.png, id=275, 977.15062pt x 511.15968pt>
+<lucasplots/monImages/PacmanLabyrinth.png, id=303, 977.15062pt x 511.15968pt>
 File: lucasplots/monImages/PacmanLabyrinth.png Graphic file (type png)
 
 <use lucasplots/monImages/PacmanLabyrinth.png>
 Package pdftex.def Info: lucasplots/monImages/PacmanLabyrinth.png used on input
- line 248.
+ line 273.
 (pdftex.def)             Requested size: 273.83728pt x 143.24852pt.
- [9
+ [10
 
  <./lucasplots/monImages/PacmanLabyrinth.png>]
-<lucasplots/monImages/Distance_Predictions.png, id=303, 974.89218pt x 511.9125p
+<lucasplots/monImages/Distance_Predictions.png, id=331, 974.89218pt x 511.9125p
 t>
 File: lucasplots/monImages/Distance_Predictions.png Graphic file (type png)
  <use lucasplots/monImages/Distance_Predictions.png>
 Package pdftex.def Info: lucasplots/monImages/Distance_Predictions.png used on 
-input line 258.
+input line 283.
 (pdftex.def)             Requested size: 273.83728pt x 143.78757pt.
- [10
+ [11
 
  <./lucasplots/monImages/Distance_Predictions.png>]
-<lucasplots/monImages/WallColorPredictions.png, id=330, 933.4875pt x 512.66531p
+<lucasplots/monImages/WallColorPredictions.png, id=358, 933.4875pt x 512.66531p
 t>
 File: lucasplots/monImages/WallColorPredictions.png Graphic file (type png)
  <use lucasplots/monImages/WallColorPredictions.png>
 Package pdftex.def Info: lucasplots/monImages/WallColorPredictions.png used on 
-input line 269.
+input line 294.
 (pdftex.def)             Requested size: 171.14764pt x 93.98892pt.
 File: lucasplots/monImages/WallColorPredictions.png Graphic file (type png)
 
 <use lucasplots/monImages/WallColorPredictions.png>
 Package pdftex.def Info: lucasplots/monImages/WallColorPredictions.png used on 
-input line 269.
+input line 294.
 (pdftex.def)             Requested size: 171.14764pt x 93.98892pt.
- [11
+ [12
 
  <./lucasplots/monImages/WallColorPredictions.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 295
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 320
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 295.
+LaTeX Font Info:    No file OMScmss.fd. on input line 320.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 295.
+(Font)              for symbol `textbraceleft' on input line 320.
 
-[12
-
-] [13
+[13
 
 ] [14
 
 ] [15
+
+] [16
 
 ]
 \tf@nav=\write6
@@ -985,11 +995,11 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 \tf@snm=\write8
 \openout8 = `presentation_1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
  (./presentation_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
 Package rerunfilecheck Info: File `presentation_1.out' has not changed.
 (rerunfilecheck)             Checksum: 2F5209A635DD2576C61323470EAC0004;231.
 
@@ -1000,16 +1010,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
  ) 
 Here is how much of TeX's memory you used:
- 15850 strings out of 493304
- 295228 string characters out of 6139871
- 370275 words of memory out of 5000000
- 18880 multiletter control sequences out of 15000+600000
+ 15874 strings out of 493304
+ 295764 string characters out of 6139871
+ 371275 words of memory out of 5000000
+ 18899 multiletter control sequences out of 15000+600000
  10858 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,16n,60p,403b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,16n,60p,403b,901s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -1022,10 +1032,10 @@ lic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb>
-Output written on presentation_1.pdf (15 pages, 434475 bytes).
+Output written on presentation_1.pdf (16 pages, 869420 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 456 compressed objects within 5 object streams
- 35 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 542 PDF objects out of 1000 (max. 8388607)
+ 484 compressed objects within 5 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 

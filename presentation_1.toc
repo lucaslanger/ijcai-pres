@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{Predictive state representations}{3}{0}{1}
-\beamer@sectionintoc {2}{The Base System}{6}{0}{2}
-\beamer@sectionintoc {3}{Experimental results}{7}{0}{3}
-\beamer@sectionintoc {4}{Learning the Base System}{12}{0}{4}
+\beamer@sectionintoc {2}{The Base System}{7}{0}{2}
+\beamer@sectionintoc {3}{Experimental results}{8}{0}{3}
+\beamer@sectionintoc {4}{Learning the Base System}{13}{0}{4}
