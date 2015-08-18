@@ -236,13 +236,62 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 
 \begin{frame}
-\frametitle{Double Loop Results}
+\frametitle{Varying noise in loops}
 
-$||f_A - f_ABar|| = (\sum (f_A(x) - f_ABar)^2)^(0.5)$ 
 
 \begin{figure}
+
+\begin{itemize}
+\item Left Figure: No noise in durations
+\item Right Figure: Noise in loops
+\item Noise makes the loops more compressible
+\end{itemize}
 \includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
-\includegraphics[width=0.5\linewidth]{lucasplots/monImages/doubleLoopImage.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+
+$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Varying amount of data}
+
+
+\begin{figure}
+
+\begin{itemize}
+\item The more data, the more effective the base
+
+\end{itemize}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+
+$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Pacman Labyrinth}
+
+\begin{figure}
+
+\begin{itemize}
+\item Left figure: timing predictions
+\item Right figure: distance predictions
+
+\end{itemize}
+\includegraphics[width=0.8\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
+
+\includegraphics[width=0.5\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+
+$||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 
 \end{figure}
 \end{frame}
