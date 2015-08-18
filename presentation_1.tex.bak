@@ -324,9 +324,9 @@ We paint the first loop green and the second loop red.
 \item What's left for the Base System?
 \item[] 1) Theoretical analysis
 
-\item[] 2) Test 
+\item[] 2) Test heuristics for selection and querying
 
-\item[] 2) Further optimize choosing operators 
+\item[] 3) Further optimize heuristics
 
 
 \end{itemize}

@@ -3,7 +3,7 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {1}{A Spectral Algorithm for PSRs}{3}{A Spectral Algorithm for PSRs}{0}}
+\headcommand {\sectionentry {1}{Predictive state representations}{3}{Predictive state representations}{0}}
 \headcommand {\beamer@sectionpages {1}{2}}
 \headcommand {\beamer@subsectionpages {1}{2}}
 \headcommand {\slideentry {1}{0}{3}{3/3}{}{0}}
@@ -17,7 +17,7 @@
 \headcommand {\beamer@subsectionpages {3}{5}}
 \headcommand {\slideentry {2}{0}{6}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\sectionentry {3}{Experimental Results}{7}{Experimental Results}{0}}
+\headcommand {\sectionentry {3}{Experimental results}{7}{Experimental results}{0}}
 \headcommand {\beamer@sectionpages {6}{6}}
 \headcommand {\beamer@subsectionpages {6}{6}}
 \headcommand {\slideentry {3}{0}{7}{7/7}{}{0}}
@@ -30,7 +30,7 @@
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\slideentry {3}{0}{11}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\sectionentry {4}{Computing and Learning the Base System}{12}{Computing and Learning the Base System}{0}}
+\headcommand {\sectionentry {4}{Learning the Base System}{12}{Learning the Base System}{0}}
 \headcommand {\beamer@sectionpages {7}{11}}
 \headcommand {\beamer@subsectionpages {7}{11}}
 \headcommand {\slideentry {4}{0}{12}{12/12}{}{0}}
