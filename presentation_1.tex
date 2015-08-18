@@ -114,7 +114,7 @@ Supervisors: Borja Balle, Doina Precup \\
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{Predictive state representations} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+\section{Predictive state representation (PSR)} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
@@ -146,11 +146,12 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{PSRs: The Timing Case}
+\frametitle{PSR: The Timing Case}
 
 \begin{itemize}
 \item Model environment with a Predictive state representation
-\item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty\}>$
+\item For timing we have a one observation symbol {$\sigma$}
+\item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty>$
 \item[] $\alpha_0$: Initial weighting on states $1xn$
 \item[] $A_\sigma$ Transition matrix $nxn$
 \item[] $\alpha_\infty$: Normalizer $nx1$
@@ -234,12 +235,16 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 \end{frame}
 
 %------------------------------------------------
+\begin{comment}
+
 
 \begin{frame}
 \frametitle{Varying amount of data}
 
 \begin{itemize}
-\item The more data, the more effective the base
+\item The \textbf{more data}, the \textbf{more effective} the Base System 
+\item Left Figure: 10000 Trajectories
+\item Right Figure: 250000 Trajectories
 
 \end{itemize}
 
@@ -254,7 +259,7 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 \column{.5\textwidth} % Right column and width
 \begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/highdata.png}
 \end{figure}
 
 \end{columns}
@@ -268,6 +273,7 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 \end{frame}
 
+\end{comment}
 %------------------------------------------------
 
 
@@ -298,6 +304,7 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 \begin{itemize}
 \item Noise allows for smaller models
 
+\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -330,6 +337,7 @@ Agent goes through loops until leaving through an exit state. Exit states have t
 
 \end{columns}
 
+
 \end{frame}
 
 %------------------------------------------------
@@ -359,7 +367,7 @@ We paint the first loop green and the second loop blue.
 \item How do we pick transition operators?
 \item[] Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
 
-\item[] Desired Base System: {$A_a^{30}$, $A_b^{18}$, $A_a$, $A_b$}
+\item[] Desired Base System: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
 
 \item Substring properties: 
 \textbf{long}, \textbf{frequent}, \textbf{diverse}
