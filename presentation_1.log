@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  19 AUG 2015 10:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  19 AUG 2015 10:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -936,20 +936,16 @@ File: lucasplots/monImages/PacmanLabyrinth.png Graphic file (type png)
 <use lucasplots/monImages/PacmanLabyrinth.png>
 Package pdftex.def Info: lucasplots/monImages/PacmanLabyrinth.png used on input
  line 356.
-(pdftex.def)             Requested size: 171.14764pt x 89.52448pt.
+(pdftex.def)             Requested size: 188.26346pt x 98.47849pt.
+File: lucasplots/pac-man.jpg Graphic file (type jpg)
+ <use lucasplots/pac-man.jpg>
+Package pdftex.def Info: lucasplots/pac-man.jpg used on input line 356.
+(pdftex.def)             Requested size: 154.03183pt x 96.27007pt.
 
-<lucasplots/monImages/Distance_Predictions.png, id=247, 974.89218pt x 511.9125p
-t>
-File: lucasplots/monImages/Distance_Predictions.png Graphic file (type png)
- <use lucasplots/monImages/Distance_Predictions.png>
-Package pdftex.def Info: lucasplots/monImages/Distance_Predictions.png used on 
-input line 356.
-(pdftex.def)             Requested size: 171.14764pt x 89.86722pt.
- [8
+[8
 
- <./lucasplots/monImages/PacmanLabyrinth.png> <./lucasplots/monImages/Distance_
-Predictions.png>]
-<lucasplots/monImages/WallColorPredictions.png, id=276, 933.4875pt x 512.66531p
+ <./lucasplots/monImages/PacmanLabyrinth.png>]
+<lucasplots/monImages/WallColorPredictions.png, id=274, 933.4875pt x 512.66531p
 t>
 File: lucasplots/monImages/WallColorPredictions.png Graphic file (type png)
  <use lucasplots/monImages/WallColorPredictions.png>
@@ -957,7 +953,7 @@ Package pdftex.def Info: lucasplots/monImages/WallColorPredictions.png used on
 input line 374.
 (pdftex.def)             Requested size: 205.37926pt x 112.78671pt.
 
-<lucasplots/monImages/doubleLoopImageMO.png, id=277, 751.30687pt x 459.21562pt>
+<lucasplots/monImages/doubleLoopImageMO.png, id=275, 751.30687pt x 459.21562pt>
 File: lucasplots/monImages/doubleLoopImageMO.png Graphic file (type png)
 <use lucasplots/monImages/doubleLoopImageMO.png>
 Package pdftex.def Info: lucasplots/monImages/doubleLoopImageMO.png used on inp
@@ -1012,10 +1008,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
  ) 
 Here is how much of TeX's memory you used:
- 15849 strings out of 493304
- 295390 string characters out of 6139871
+ 15844 strings out of 493304
+ 295167 string characters out of 6139871
  372264 words of memory out of 5000000
- 18880 multiletter control sequences out of 15000+600000
+ 18876 multiletter control sequences out of 15000+600000
  10858 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,16n,55p,403b,900s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1031,10 +1027,10 @@ lic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb>
-Output written on presentation_1.pdf (13 pages, 988724 bytes).
+Output written on presentation_1.pdf (13 pages, 935503 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
+ 457 PDF objects out of 1000 (max. 8388607)
  401 compressed objects within 5 object streams
  31 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
