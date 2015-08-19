@@ -226,7 +226,7 @@ $f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 
 \begin{frame}
 \frametitle{Timing with the Base}
-Agent goes through loops until leaving through an exit state. Exit states have transition probabilities of 0.4 and 0.6. Loop lengths are 64 and 16.
+Agent goes through loops until leaving through an exit state. Exit probabilities of 0.4 and 0.6. Loop lengths are 64 and 16 time units.
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}
