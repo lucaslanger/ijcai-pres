@@ -123,7 +123,7 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Structured partially observable environments}
+\frametitle{Structured Partially Observable Environments}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
@@ -159,7 +159,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \item PSRs compute probabilities of observations
 \item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
-\item Examples of a PSRs: HMMs, POMDPs
+\item Example of a PSR: HMM
  
 \end{itemize}
 
@@ -174,7 +174,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \item[] Step 1: Represent data as a matrix
 \item[] Step 2: Singular value decomposition
 \item[] Step 3: Pick number of states for PSR
-\item[] Step 4: Learn the PSR with matrix computations
+\item[] Step 4: Learn $<\alpha_0, \{A_\sigma\},\alpha_\infty>$ with matrix computations
 \end{itemize}
 
 \end{frame}
@@ -276,7 +276,7 @@ Agent goes through loops until leaving through an exit state. Exit probabilities
 
 
 \begin{frame}
-\frametitle{Varying noise in loops}
+\frametitle{Base System Performance for Loops}
 
 
 %\begin{itemize}

@@ -100,14 +100,18 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{document}
 
+
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
 
+\begin{comment}
 \begin{frame}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
+\end{comment}
+
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
@@ -151,15 +155,17 @@ Supervisors: Borja Balle, Doina Precup \\
 \begin{itemize}
 \item Model environment with a Predictive state representation
 \item For timing we have one observation symbol: {$\sigma$}
+\item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
+\item[]
 \item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty>$
 \item[] $\alpha_0$: Initial weighting on states $1xn$
 \item[] $A_\sigma$: Transition matrix $nxn$
 \item[] $\alpha_\infty$: Normalizer $nx1$
 \item[]
 \item PSRs compute probabilities of observations
-\item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
+
 \item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
-\item Examples of a PSRs: HMMs, POMDPs
+\item Example of a PSR: HMM
  
 \end{itemize}
 
@@ -174,7 +180,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \item[] Step 1: Represent data as a matrix
 \item[] Step 2: Singular value decomposition
 \item[] Step 3: Pick number of states for PSR
-\item[] Step 4: Learn the PSR with matrix computations
+\item[] Step 4: Learn $<\alpha_0, \{A_\sigma\},\alpha_\infty>$ with matrix computations
 \end{itemize}
 
 \end{frame}
@@ -186,12 +192,12 @@ Supervisors: Borja Balle, Doina Precup \\
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Idea: Add $\{A_{\sigma}, A_{\sigma}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
+\item Idea: Add $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
 
 \item Timing queries: $f(\sigma^{11}) = \alpha_0*A_{\sigma^8}*A_{\sigma^2}*A_{\sigma^1}*\alpha_\infty$
 
 \item Motivation: 
-\item[] 1) Express transitions directly to avoid error build up
+\item[] 1) Express transitions directly
 \item[] 2) Faster queries
 \end{itemize}
 \end{frame}
@@ -226,7 +232,7 @@ $f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 
 \begin{frame}
 \frametitle{Timing with the Base}
-Agent goes through loops until leaving through an exit state. Exit probabilities of 0.4 and 0.6. Loop lengths are 64 and 16 time units.
+Agent goes through loops until leaving through an exit state.  Loop lengths are 64 and 16 time units (not to scale).
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}

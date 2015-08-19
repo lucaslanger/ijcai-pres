@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.24pt}
-\beamer@sectionintoc {1}{Predictive state representation (PSR)}{3}{0}{1}
-\beamer@sectionintoc {2}{The Base System: extending PSRs}{6}{0}{2}
-\beamer@sectionintoc {3}{Experimental results}{7}{0}{3}
-\beamer@sectionintoc {4}{Learning the Base System}{11}{0}{4}
+\beamer@sectionintoc {1}{Predictive state representation (PSR)}{2}{0}{1}
+\beamer@sectionintoc {2}{The Base System: extending PSRs}{5}{0}{2}
+\beamer@sectionintoc {3}{Experimental results}{6}{0}{3}
+\beamer@sectionintoc {4}{Learning the Base System}{10}{0}{4}
