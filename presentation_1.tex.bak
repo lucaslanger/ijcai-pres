@@ -80,6 +80,8 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{amsmath}
 \usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
 
 
 %----------------------------------------------------------------------------------------
@@ -100,14 +102,18 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{document}
 
+
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
 
+\begin{comment}
 \begin{frame}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
+\end{comment}
+
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
@@ -151,13 +157,15 @@ Supervisors: Borja Balle, Doina Precup \\
 \begin{itemize}
 \item Model environment with a Predictive state representation
 \item For timing we have one observation symbol: {$\sigma$}
+\item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
+\item[]
 \item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty>$
 \item[] $\alpha_0$: Initial weighting on states $1xn$
 \item[] $A_\sigma$: Transition matrix $nxn$
 \item[] $\alpha_\infty$: Normalizer $nx1$
 \item[]
 \item PSRs compute probabilities of observations
-\item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
+
 \item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
 \item Example of a PSR: HMM
  
@@ -186,12 +194,12 @@ Supervisors: Borja Balle, Doina Precup \\
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Idea: Add $\{A_{\sigma}, A_{\sigma}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
+\item Idea: Add $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
 
 \item Timing queries: $f(\sigma^{11}) = \alpha_0*A_{\sigma^8}*A_{\sigma^2}*A_{\sigma^1}*\alpha_\infty$
 
 \item Motivation: 
-\item[] 1) Express transitions directly to avoid error build up
+\item[] 1) Express transitions directly
 \item[] 2) Faster queries
 \end{itemize}
 \end{frame}
@@ -226,7 +234,7 @@ $f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 
 \begin{frame}
 \frametitle{Timing with the Base}
-Agent goes through loops until leaving through an exit state. Exit probabilities of 0.4 and 0.6. Loop lengths are 64 and 16 time units.
+Agent goes through loops until leaving through an exit state.  Loop lengths are 64 and 16 time units (not to scale).
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}
@@ -324,19 +332,19 @@ Agent goes through loops until leaving through an exit state. Exit probabilities
 
 
 \hspace{1cm} Timing Predictions
-\hspace{3cm} Distance Predictions
+%\hspace{3cm} Distance Predictions
 
 \begin{columns}[c]
 
-\column{.5\textwidth} % Left column and width
+\column{.55\textwidth} % Left column and width
 \begin{figure}
 \includegraphics[width=1.0\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
 \end{figure}
 
 
-\column{.5\textwidth} % Right column and width
+\column{.45\textwidth} % Right column and width
 \begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/Distance_Predictions.png}
+\includegraphics[width=1.0\linewidth]{lucasplots/pac-man.jpg}
 \end{figure}
 
 \end{columns}
@@ -436,6 +444,43 @@ We paint the first loop green and the second loop blue
 \begin{frame}
 \Huge{\centerline{Questions? Comments?}}
 \end{frame}
+
+\begin{frame}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\begin{tikzpicture}[node distance=2cm]
+
+\node (start) [startstop] {Observation Data};
+
+\node (in1) [io, below of=start] {Pick Operators};
+
+\node (pro1) [process, below of=in1] {Learn Operators };
+\node (dec1) [decision, below of=pro1] {Partition Query Sequence};
+
+\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {};
+\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
+\node (out1) [io, below of=pro2a] {Output};
+\node (stop) [startstop, below of=out1] {Stop};
+
+\draw [arrow] (start) -- (in1);
+\draw [arrow] (in1) -- (pro1);
+\draw [arrow] (pro1) -- (dec1);
+\draw [arrow] (dec1) -- (pro2a);
+\draw [arrow] (dec1) -- (pro2b);
+
+\end{tikzpicture}
+\end{frame}
+
+
+
 
 %					DONE
 
