@@ -159,15 +159,14 @@ Supervisors: Borja Balle, Doina Precup \\
 \item For timing we have one observation symbol: {$\sigma$}
 \item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[]
-\item PSR defined by: $<\alpha_0, \{A_\sigma\},\alpha_\infty>$
+\item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
 \item[] $\alpha_0$: Initial weighting on states $1xn$
 \item[] $A_\sigma$: Transition matrix $nxn$
 \item[] $\alpha_\infty$: Normalizer $nx1$
 \item[]
 \item PSRs compute probabilities of observations
 
-\item[] $f(\sigma^k) = \alpha_0*A_\sigma^k*\alpha_\infty$
-\item Example of a PSR: HMM
+\item[] $f(\sigma^k) = \alpha_0 \cdot A_\sigma^k \cdot \alpha_\infty$
  
 \end{itemize}
 
@@ -182,7 +181,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \item[] Step 1: Represent data as a matrix
 \item[] Step 2: Singular value decomposition
 \item[] Step 3: Pick number of states for PSR
-\item[] Step 4: Learn $<\alpha_0, \{A_\sigma\},\alpha_\infty>$ with matrix computations
+\item[] Step 4: Learn $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ with matrix computations
 \end{itemize}
 
 \end{frame}
@@ -196,7 +195,7 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \item Idea: Add $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
 
-\item Timing queries: $f(\sigma^{11}) = \alpha_0*A_{\sigma^8}*A_{\sigma^2}*A_{\sigma^1}*\alpha_\infty$
+\item Timing queries: $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
 
 \item Motivation: 
 \item[] 1) Express transitions directly
@@ -273,7 +272,7 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 \begin{itemize}
 
 
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 
@@ -293,8 +292,8 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 
 %\end{itemize}
 
-\hspace{1cm}No noise in durations
-\hspace{3cm}Noise in durations
+\hspace{1cm} \textbf{No noise in durations}
+\hspace{2.5cm} \textbf{Noise in durations}
 
 \begin{columns}[c]
 
@@ -312,9 +311,10 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 \end{columns}
 
 \begin{itemize}
+\item Base System dominates for smaller models
 \item Noise allows for smaller models
 
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -370,7 +370,7 @@ We paint the first loop green and the second loop blue
 
 \begin{itemize}
 
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -387,15 +387,16 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 
-\item Picking operators to exploit structure
-\item[] Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
+\item Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
 
 \item[] Desired Base System: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
-
-\item Substring properties: 
-\textbf{long}, \textbf{frequent}, \textbf{diverse}
+\item[]
 
 \item Solution: iterative greedy heuristic 
+\item Substring properties: 
+\textbf{long}, \textbf{frequent}, \textbf{diverse}
+\item[]
+\item Entropy view of structure
 
 
 \end{itemize}
@@ -408,16 +409,19 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 
-\item Using the Base System well involves requires good \textbf{string partitions}
+\item How should we execute queries?
+\item[] Goal: \textbf{minimize number of matrices}
+\item[]
 
 \item[] Query string: "abcacb", Base System = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
 
 
-\item[] Desired partition: "a|bca|cb""
-
-\item Goal: minimize matrices used
+\item[] Desired partition: "a|bca|cb"
+\item[] Computation: $f(abcacb)=\alpha_0 \cdot A_a \cdot A_{bca} \cdot A_{cb} \cdot \alpha_\infty$ 
+\item[]
 
 \item Solution: dynamic programming
+
 
 \end{itemize}
 \end{frame}
@@ -463,7 +467,7 @@ We paint the first loop green and the second loop blue
 \node (in1) [io, below of=start] {Pick Operators};
 
 \node (pro1) [process, below of=in1] {Learn Operators };
-\node (dec1) [decision, below of=pro1] {Obtain PSR};
+\node (dec1) [decision, below of=pro1] {PSR};
 
 \node (pro2b) [process, right of=dec1, xshift=2cm] {Query String };
 \node (out1) [io, right of=pro2b] {Optimal Partition};

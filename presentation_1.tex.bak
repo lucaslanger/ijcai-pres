@@ -273,7 +273,7 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 \begin{itemize}
 
 
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 
@@ -293,8 +293,8 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 
 %\end{itemize}
 
-\hspace{1cm}No noise in durations
-\hspace{3cm}Noise in durations
+\hspace{1cm} \textbf{No noise in durations}
+\hspace{2.5cm} \textbf{Noise in durations}
 
 \begin{columns}[c]
 
@@ -312,9 +312,10 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 \end{columns}
 
 \begin{itemize}
+\item Base System dominates for smaller models
 \item Noise allows for smaller models
 
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -370,7 +371,7 @@ We paint the first loop green and the second loop blue
 
 \begin{itemize}
 
-\item $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -387,15 +388,16 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 
-\item Picking operators to exploit structure
-\item[] Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
+\item Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
 
 \item[] Desired Base System: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
-
-\item Substring properties: 
-\textbf{long}, \textbf{frequent}, \textbf{diverse}
+\item[]
 
 \item Solution: iterative greedy heuristic 
+\item Substring properties: 
+\textbf{long}, \textbf{frequent}, \textbf{diverse}
+\item[]
+\item Entropy view of structure
 
 
 \end{itemize}
@@ -408,16 +410,19 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 
-\item Using the Base System well involves requires good \textbf{string partitions}
+\item How should we execute queries?
+\item[] Goal: \textbf{minimize number of matrices}
+\item[]
 
 \item[] Query string: "abcacb", Base System = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
 
 
-\item[] Desired partition: "a|bca|cb""
-
-\item Goal: minimize matrices used
+\item[] Desired partition: "a|bca|cb"
+\item[] Computation: $f(abcacb)=\alpha_0 \cdot A_a \cdot A_{bca} \cdot A_{cb} \cdot \alpha_\infty$ 
+\item[]
 
 \item Solution: dynamic programming
+
 
 \end{itemize}
 \end{frame}
@@ -463,17 +468,15 @@ We paint the first loop green and the second loop blue
 \node (in1) [io, below of=start] {Pick Operators};
 
 \node (pro1) [process, below of=in1] {Learn Operators };
-\node (dec1) [decision, below of=pro1] {Partition Query Sequence};
+\node (dec1) [decision, below of=pro1] {PSR};
 
-\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {};
-\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
-\node (out1) [io, below of=pro2a] {Output};
-\node (stop) [startstop, below of=out1] {Stop};
+\node (pro2b) [process, right of=dec1, xshift=2cm] {Query String };
+\node (out1) [io, right of=pro2b] {Optimal Partition};
+\node (stop) [startstop, right of=out1] {Probability};
 
 \draw [arrow] (start) -- (in1);
 \draw [arrow] (in1) -- (pro1);
 \draw [arrow] (pro1) -- (dec1);
-\draw [arrow] (dec1) -- (pro2a);
 \draw [arrow] (dec1) -- (pro2b);
 
 \end{tikzpicture}
