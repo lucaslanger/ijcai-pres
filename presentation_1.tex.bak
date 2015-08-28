@@ -88,7 +88,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Spectral learning with structure]{Spectral learning for structured partially observable environments} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Spectral learning with structure]{Spectral Learning for Structured Partially Observable Environments} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Lucas Langer} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -135,7 +135,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \column{.45\textwidth} % Left column and width
 \textbf{Structured Environments}
 \begin{enumerate}
-\item Goal: Predictions
+\item Goal: Predict observations
 \item Plan: Exploit structure
 \item Example: Pacman
 
@@ -156,7 +156,7 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{itemize}
 \item Model environment with a Predictive state representation
-\item For timing we have one observation symbol: {$\sigma$}
+\item For timing we have one observation: {$\sigma$}
 \item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[]
 \item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
@@ -178,10 +178,10 @@ Supervisors: Borja Balle, Doina Precup \\
 \frametitle{Spectral Learning of PSRs}
 
 \begin{itemize}
-\item[] Step 1: Represent data as a matrix
-\item[] Step 2: Singular value decomposition
-\item[] Step 3: Pick number of states for PSR
-\item[] Step 4: Learn $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ with matrix computations
+\item[] Step 1: Represent data as a Hankel Matrix
+\item[] Step 2: Singular Value Decomposition
+\item[] Step 3: Pick Model Size
+\item[] Step 4: Learn PSR: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
 \end{itemize}
 
 \end{frame}
@@ -446,6 +446,8 @@ We paint the first loop green and the second loop blue
 %------------------------------------------------
 
 \begin{frame}
+\frametitle{The Big Picture}
+
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
 
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
@@ -460,24 +462,22 @@ We paint the first loop green and the second loop blue
 
 \begin{tikzpicture}[node distance=2cm]
 
-\node (in2) [startstop] {Partially Observable Environment};
+\node (in2) [startstop, xshift=-0.5cm] {Partially Observable Environment};
 
-\node (start) [startstop, yshift=-2cm]{Observations};
-
-\node (in1) [process, right of=start, xshift=2.2cm] {Pick Operators};
+\node (in1) [process, below of=in2] {Pick Operators};
 
 \node (dec1) [decision, below of=in1] {Learn PSR};
 
-\node (pro2b) [process, below of=dec1] {Query String };
-\node (out1) [process, below of=pro2b, xshift=-3cm] {Partition};
+\node (pro2b) [process, left of=dec1, xshift = -3cm] {Query String };
+\node (out1) [process, right of=dec1] {Partition};
 \node (stop) [startstop, right of=out1, xshift=4cm] {Probability};
 
-\draw [arrow] (in2) -- node[anchor=west] {   \hspace{0.5cm} \{a,ba,bcacb,... \}} (start);
+\draw [arrow] (in1) -- node[anchor=south] {  \{$A_{a},A_{cb}$ ... \} } (dec1);
 
-\draw [arrow] (start) -- node[anchor=north] {} (in1);
-\draw [arrow] (in1) -- node[anchor=east] { \{$A_{a},A_{cb}$ ... \} } (dec1);
-\draw [arrow] (dec1) -- node[anchor=east] {abcacb} (pro2b);
-\draw [arrow] (pro2b) -- node[anchor=east] {a-bca-cb} (out1);
+\draw [arrow] (in2) -- node[anchor=south] {abcacb} (in1);
+
+\draw [arrow] (pro2b) -- node[anchor=south] {abcacb} (dec1);
+\draw [arrow] (out1) -- node[anchor=south] {a-bca-cb} (dec1);
 \draw [arrow] (out1) -- node[anchor=south] {$\alpha_0 A_a A_{bca} A_{cb} \alpha_{\infty}$} (stop);
 
 
