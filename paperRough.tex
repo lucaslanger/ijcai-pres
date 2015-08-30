@@ -1,6 +1,10 @@
 \documentclass{acm_proc_article-sp}
 \usepackage{verbatim}
 \usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pifont}
+
 \begin{document}
 
 \title{Spectral learning for structured partially observable environments}
@@ -26,6 +30,44 @@ We consider the problem of learning models of time series data in partially obse
 Predictive state representations (PSR) are used as a model for computing a probability distribution over observations in a dynamical system \cite{littman2001predictive}. There exists a well known spectral algorithm which learns a PSR from empirical data \cite{boots2010closing}. The algorithm makes use of Hankel matrices and singular value decomposition. One can control the number of states in the PSR by only including states with high singular values. The reason for using fewer states is twofold. First, noise in empirical data artificially creates extra states with low singular values. Secondly, reducing the number of states is necessary in practice for computational performance. 
 
 Learning of PSRs began with work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
+
+
+\section{Preliminaries and Notation}
+
+\subsection{Notation}
+We now introduce some notation. Let $\sum$ be the alphabet of observations symbols. Then we use $\sum*$ to denote the set of all finite strings which can be made from $\sum$.
+
+A PSR is defined by three parameters: f = $\langle\alpha_0, \{A_S\},\alpha_{\infty}\rangle$. Here $\alpha_0$ is a row vector (1xn), $\alpha_{\infty}$ is a column vector (nx1), and $A_s, s \in S$ are transition matrices ($nxn$) between states associated with the observation s. The dimension of these parameters n corresponds to the number of states in the PSR. 
+
+\subsection{Spectral Learning of PSRs}
+placeholder
+
+\subsection{Computations}
+Let x $\in \sum*$ be a query string with a decomposition $x=x_1x_2x_3...x_k$ with $x_i \in S$ . Then  $f(x) = \alpha_0 \cdot A_{x_1} \cdot A_{x_2} ... A_{x_k} \cdot \alpha_{\inf}$. Note that multiple decompositions of x may be possible. 
+
+The standard way of computing with PSRs has been to include \{$A_s$\} s $\in \sum$ and decompose a string x character by character.
+
+\subsection{Selection of the Base}
+
+Given observation sequences one would like to automatically determine which operators to learn. From and intuitive standpoint, operators should cover all frequent and long substrings that occur in observations. Here, we present an iterative greedy algorithm for choosing such operators.
+
+\begin{algorithm}
+\caption{Base Selection Algorithm}
+\label{Base Selection}
+\begin{algorithmic}[1]
+\Procedure{Base Selection}{}
+\State $BaseSystem \gets \{s, s \in \sum \} $
+\State $i\gets 0$
+\While{$i<desiredBaseSize$}
+\For{each substring $s$ $\in Observations$ }
+\For{each observation in }
+
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
 
 \section{Approach and Uniqueness} 
 

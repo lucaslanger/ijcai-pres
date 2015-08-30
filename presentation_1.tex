@@ -129,14 +129,14 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Structured Partially Observable Environments}
+\frametitle{Partially Observable Environments}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
 \textbf{Structured Environments}
 \begin{enumerate}
 \item Goal: Predict observations
-\item Plan: Exploit structure
+\item Plan: Exploit patterns
 \item Example: Pacman
 
 \end{enumerate}
@@ -155,8 +155,8 @@ Supervisors: Borja Balle, Doina Precup \\
 \frametitle{PSR: The Timing Case}
 
 \begin{itemize}
-\item Model environment with a Predictive state representation
-\item For timing we have one observation: {$\sigma$}
+\item Model: Predictive State Representation (PSR)
+\item[] For timing we have one observation symbol: {$\sigma$}
 \item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[]
 \item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
@@ -167,7 +167,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \item PSRs compute probabilities of observations
 
 \item[] $f(\sigma^k) = \alpha_0 \cdot A_\sigma^k \cdot \alpha_\infty$
- 
+\item[] Ex: HMMs
 \end{itemize}
 
 \end{frame}
@@ -178,7 +178,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \frametitle{Spectral Learning of PSRs}
 
 \begin{itemize}
-\item[] Step 1: Represent data as a Hankel Matrix
+\item[] Step 1: Represent Data as a Hankel Matrix
 \item[] Step 2: Singular Value Decomposition
 \item[] Step 3: Pick Model Size
 \item[] Step 4: Learn PSR: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
@@ -193,7 +193,7 @@ Supervisors: Borja Balle, Doina Precup \\
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Idea: Add $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
+\item Idea: Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
 
 \item Timing queries: $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
 
@@ -233,52 +233,13 @@ $f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 
 \begin{frame}
 \frametitle{Timing with the Base}
-Agent goes through loops until leaving through an exit state.  Loop lengths are 64 and 16 time units (not to scale).
+Agent drives around loops until leaving through an exit state. 
+
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}
 \end{frame}
 
-%------------------------------------------------
-\begin{comment}
-
-
-\begin{frame}
-\frametitle{Varying amount of data}
-
-\begin{itemize}
-\item The \textbf{more data}, the \textbf{more effective} the Base System 
-\item Left Figure: 10000 Trajectories
-\item Right Figure: 250000 Trajectories
-
-\end{itemize}
-
-
-\begin{columns}[c]
-
-\column{.5\textwidth} % Left column and width
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
-\end{figure}
-
-
-\column{.5\textwidth} % Right column and width
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/highdata.png}
-\end{figure}
-
-\end{columns}
-
-\begin{itemize}
-
-
-\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
-\end{itemize}
-
-
-\end{frame}
-
-\end{comment}
 %------------------------------------------------
 
 
@@ -292,27 +253,26 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 
 %\end{itemize}
 
-\hspace{1cm} \textbf{No noise in durations}
-\hspace{2.5cm} \textbf{Noise in durations}
+\hspace{1cm} \textbf{64-16 Loop Lengths}
+\hspace{2.5cm} \textbf{47-27 Loop Lengths}
 
 \begin{columns}[c]
 
 \column{.5\textwidth} % Left column and width
 \begin{figure}
 
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0.png}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop64-16.png}
 \end{figure}
 
 \column{.5\textwidth} % Right column and width
 \begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/DoubleLoopTiming0_1.png}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop47-27.png}
 \end{figure}
 
 \end{columns}
 
 \begin{itemize}
 \item Base System dominates for smaller models
-\item Noise allows for smaller models
 
 \item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
@@ -338,13 +298,14 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 
 \column{.55\textwidth} % Left column and width
 \begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/monImages/PacmanLabyrinth.png}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTiming.png}
 \end{figure}
 
 
 \column{.45\textwidth} % Right column and width
 \begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/pac-man.jpg}
+\includegraphics[width=0.5\linewidth]{lucasplots/pac-man.jpg}
+\includegraphics[width=0.5\linewidth]{uCOREPICS/graphPacMan.png}
 \end{figure}
 
 \end{columns}
@@ -363,7 +324,7 @@ Agent goes through loops until leaving through an exit state.  Loop lengths are 
 \frametitle{Wall Color Predictions}
 We paint the first loop green and the second loop blue
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{lucasplots/monImages/WallColorPredictions.png}
+\includegraphics[width=0.6\linewidth]{uCOREPICS/MultipleObservations.png}
 \includegraphics[width=0.4\linewidth]{lucasplots/monImages/doubleLoopImageMO.png}
 
 \end{figure}
@@ -429,18 +390,29 @@ We paint the first loop green and the second loop blue
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Conclusion and Future Work}
-\begin{itemize}
+\frametitle{Performance of Heuristics}
 
-\item What's left for the Base System?
-\item[] 1) Theoretical analysis
+\begin{columns}[c]
 
-\item[] 2) Test heuristics on labyrinths
+\column{.33\textwidth} % Left column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTimingHeuristicsIncluded.png}
+\end{figure}
 
-\item[] 3) Further optimize heuristics
+
+\column{.33\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop47-27Heuristics.png}
+\end{figure}
+
+\column{.33\textwidth}
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/MultipleObservationsHeuristics.png}
+\end{figure}
 
 
-\end{itemize}
+\end{columns}
+
 \end{frame}
 
 %------------------------------------------------
@@ -462,23 +434,23 @@ We paint the first loop green and the second loop blue
 
 \begin{tikzpicture}[node distance=2cm]
 
-\node (in2) [startstop, xshift=-0.5cm] {Partially Observable Environment};
+\node (in2) [startstop] {Partially Observable Environment};
 
 \node (in1) [process, below of=in2] {Pick Operators};
 
-\node (dec1) [decision, below of=in1] {Learn PSR};
+\node (dec1) [decision, below of=in1, yshift=-0.5cm] {Learn PSR};
 
-\node (pro2b) [process, left of=dec1, xshift = -3cm] {Query String };
-\node (out1) [process, right of=dec1, xshift = 2cm] {Partition};
+\node (pro2b) [process, left of=dec1, xshift = -2.5cm] {Query String };
+\node (out1) [process, right of=dec1, xshift = 2.5cm] {Partition};
 \node (stop) [startstop, below of=out1] {Probability};
 
-\draw [arrow] (in1) -- node[anchor=south] {  \{$A_{a},A_{cb}$ ... \} } (dec1);
+\draw [arrow] (in1) -- node[anchor=east] {  \{$A_{a},A_{cb}$,...\} } (dec1);
 
-\draw [arrow] (in2) -- node[anchor=south] {abcacb} (in1);
+\draw [arrow] (in2) -- node[anchor=east] {\{abcacb,bca,a,...\}} (in1);
 
 \draw [arrow] (pro2b) -- node[anchor=south] {abcacb} (dec1);
 \draw [arrow] (dec1) -- node[anchor=south] {a-bca-cb} (out1);
-\draw [arrow] (out1) -- node[anchor=east] {$\alpha_0 A_a A_{bca} A_{cb} \alpha_{\infty}$} (stop);
+\draw [arrow] (out1) -- node[anchor=east] {$\alpha_0 \cdot A_a \cdot A_{bca} \cdot A_{cb} \cdot \alpha_{\infty}$} (stop);
 
 
 
@@ -488,7 +460,7 @@ We paint the first loop green and the second loop blue
 %------------------------------------------------
 
 \begin{frame}
-\Huge{\centerline{Questions? Comments?}}
+\Huge{\centerline{Questions?}}
 \end{frame}
 
 
