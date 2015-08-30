@@ -81,6 +81,9 @@
 \usepackage{amsmath}
 \usepackage{verbatim}
 \usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{subfig}
+\usepackage{caption}
 \usetikzlibrary{shapes.geometric, arrows}
 
 
@@ -156,7 +159,7 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{itemize}
 \item Model: Predictive State Representation (PSR)
-\item[] For timing we have one observation symbol: {$\sigma$}
+\item[] Timing: one observation symbol: {$\sigma$}
 \item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
 \item[]
 \item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
@@ -179,7 +182,7 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{itemize}
 \item[] Step 1: Represent Data as a Hankel Matrix
-\item[] Step 2: Singular Value Decomposition
+\item[] Step 2: Spectral: Singular Value Decomposition
 \item[] Step 3: Pick Model Size
 \item[] Step 4: Learn PSR: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
 \end{itemize}
@@ -291,29 +294,35 @@ Agent drives around loops until leaving through an exit state.
 %\end{itemize}
 
 
-\hspace{1cm} Timing Predictions
+%\hspace{1.5cm} Timing Predictions
 %\hspace{3cm} Distance Predictions
 
 \begin{columns}[c]
 
-\column{.55\textwidth} % Left column and width
+\column{.7\textwidth} % Left column and width
 \begin{figure}
 \includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTiming.png}
 \end{figure}
-
-
-\column{.45\textwidth} % Right column and width
-\begin{figure}
-\includegraphics[width=0.5\linewidth]{lucasplots/pac-man.jpg}
-\includegraphics[width=0.5\linewidth]{uCOREPICS/graphPacMan.png}
-\end{figure}
-
-\end{columns}
 
 \begin{itemize}
 
 \item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
+
+
+\column{.3\textwidth} % Right column and width
+
+\begin{figure}
+\centering
+\subcaptionbox{Pacman}{%
+  \includegraphics[width=0.5\textwidth]{lucasplots/pac-man.jpg}%
+  }\par\medskip
+\subcaptionbox{Graph\label{cw_25}}{%
+  \includegraphics[width=2.0cm,height=3cm]{uCOREPICS/graphPacMan}%
+  }\par\medskip        
+\end{figure}
+
+\end{columns}
 
 
 \end{frame}
@@ -353,11 +362,13 @@ We paint the first loop green and the second loop blue
 \item[] Desired Base System: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
 \item[]
 
-\item Solution: iterative greedy heuristic 
 \item Substring properties: 
 \textbf{long}, \textbf{frequent}, \textbf{diverse}
+\item[] Low entropy view of structure
 \item[]
-\item Entropy view of structure
+
+\item Solution: iterative greedy heuristic 
+
 
 
 \end{itemize}
@@ -392,26 +403,15 @@ We paint the first loop green and the second loop blue
 \begin{frame}
 \frametitle{Performance of Heuristics}
 
-\begin{columns}[c]
+\begin{figure}[!ht]
+  \centering
+  \captionsetup[subfigure]{labelformat=empty}
 
-\column{.33\textwidth} % Left column and width
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTimingHeuristicsIncluded.png}
+  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoopTimingHeuristics47-27.png}}\quad
+  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoop64-16Heuristics.png}}\quad
+  \subfloat{\includegraphics[width = 2in]{uCOREPICS/PacManTimingHeuristicsIncluded}}\quad
+  \subfloat{\includegraphics[width = 2in]{uCOREPICS/MultipleObservationsHeuristics.png}}
 \end{figure}
-
-
-\column{.33\textwidth} % Right column and width
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop47-27Heuristics.png}
-\end{figure}
-
-\column{.33\textwidth}
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{uCOREPICS/MultipleObservationsHeuristics.png}
-\end{figure}
-
-
-\end{columns}
 
 \end{frame}
 
@@ -422,11 +422,11 @@ We paint the first loop green and the second loop blue
 
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
 
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{io} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
 
-\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+
 \tikzstyle{decision} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
-
 
 
 \tikzstyle{arrow} = [thick,->,>=stealth]
@@ -440,7 +440,8 @@ We paint the first loop green and the second loop blue
 
 \node (dec1) [decision, below of=in1, yshift=-0.5cm] {Learn PSR};
 
-\node (pro2b) [process, left of=dec1, xshift = -2.5cm] {Query String };
+\node (io1) [io, left of=dec1, xshift = -2.5cm] {Query String };
+
 \node (out1) [process, right of=dec1, xshift = 2.5cm] {Partition};
 \node (stop) [startstop, below of=out1] {Probability};
 
@@ -448,7 +449,7 @@ We paint the first loop green and the second loop blue
 
 \draw [arrow] (in2) -- node[anchor=east] {\{abcacb,bca,a,...\}} (in1);
 
-\draw [arrow] (pro2b) -- node[anchor=south] {abcacb} (dec1);
+\draw [arrow] (io1) -- node[anchor=south] {abcacb} (dec1);
 \draw [arrow] (dec1) -- node[anchor=south] {a-bca-cb} (out1);
 \draw [arrow] (out1) -- node[anchor=east] {$\alpha_0 \cdot A_a \cdot A_{bca} \cdot A_{cb} \cdot \alpha_{\infty}$} (stop);
 
