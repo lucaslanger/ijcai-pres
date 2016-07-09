@@ -91,13 +91,13 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Spectral learning with structure]{Spectral Learning for Structured Partially Observable Environments} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Multi-Step PSR]{Learning Multi-Step Predictive State Representations} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Lucas Langer} % Your name
+\author{Lucas Langer, Borja Balle, Doina Precup} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 %McGill University \\ % Your institution for the title page
-Supervisors: Borja Balle, Doina Precup \\
+\\
 \medskip
 %\textit{lucas.langer@mail.mcgill.ca} % Your email address
 }
@@ -132,22 +132,26 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Partially Observable Environments}
+\frametitle{PSRs, WFA, and OOMs}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
-\column{.45\textwidth} % Left column and width
-\textbf{Structured Environments}
+\column{.95\textwidth} % Left column and width
+\textbf{Goals:}
 \begin{enumerate}
-\item Goal: Predict observations
-\item Plan: Exploit patterns
-\item Example: Pacman
-
+\item Learn a representation of hidden states 
+\item Model state to state transitions
+\item Predict observation sequences
+\item[] f: strings -> [0, 1]
+\item[]
 \end{enumerate}
 
-\column{.5\textwidth} % Right column and width
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{lucasplots/pac-man.jpg}
-\end{figure}
+\textbf{Motivation}
+\begin{enumerate}
+\item HMMs are a specific case
+\item Globally optima guaranteed
+\item Learn smaller representations
+
+\end{enumerate}
 
 \end{columns}
 \end{frame}
@@ -155,22 +159,19 @@ Supervisors: Borja Balle, Doina Precup \\
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{PSR: The Timing Case}
+\frametitle{PSR: The single observation case}
 
 \begin{itemize}
-\item Model: Predictive State Representation (PSR)
-\item[] Timing: one observation symbol: {$\sigma$}
-\item[] Notation: $\sigma$: one time unit, $\sigma^k$: k time units
-\item[]
 \item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
-\item[] $\alpha_0$: Initial weighting on states $1xn$
-\item[] $A_\sigma$: Transition matrix $nxn$
-\item[] $\alpha_\infty$: Normalizer $nx1$
+\item[] where
+\item[] $\alpha_0$ is an initial weighting on states $1xn$
+\item[] $A_\sigma$ is a transition matrix $nxn$
+\item[] $\alpha_\infty$ is a normalizer $nx1$
 \item[]
 \item PSRs compute probabilities of observations
 
 \item[] $f(\sigma^k) = \alpha_0 \cdot A_\sigma^k \cdot \alpha_\infty$
-\item[] Ex: HMMs
+
 \end{itemize}
 
 \end{frame}
@@ -182,7 +183,7 @@ Supervisors: Borja Balle, Doina Precup \\
 
 \begin{itemize}
 \item[] Step 1: Represent Data as a Hankel Matrix
-\item[] Step 2: Spectral: Singular Value Decomposition
+\item[] Step 2: Singular Value Decomposition
 \item[] Step 3: Pick Model Size
 \item[] Step 4: Learn PSR: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
 \end{itemize}
@@ -200,9 +201,13 @@ Supervisors: Borja Balle, Doina Precup \\
 \item[] Note: operators learned separately
 \item[]
 
-\item Timing queries: $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
+\item $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
 \item[]
-\item Motivation: express structure directly
+
+\item[] \textbf{Why might this help?}
+\item Computations become more direct
+\item Capture structure directly
+\item Reduce error build up
 
 \end{itemize}
 \end{frame}
