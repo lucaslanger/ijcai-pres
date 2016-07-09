@@ -382,15 +382,14 @@ We paint the first loop green and the second loop blue
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Computing with the Base System}
+\frametitle{How should we execute queries}
 \begin{itemize}
 
-\item How should we execute queries?
-\item[] \textbf{Minimize number of matrices}
-\item[] Compact representation, 
-\items
+\item \textbf{Minimize number of matrices}
+\item[] Compact representation, lower error build-up 
+\item[]
 
-\item[] Query string: "abcacb", Base System = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
+\item Query string: "abcacb", Operators = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
 
 
 \item[] Desired partition: "a|bca|cb"
@@ -398,7 +397,7 @@ We paint the first loop green and the second loop blue
 \item[]
 
 \item Solution: dynamic programming
-
+\item[] State update for online applications
 
 \end{itemize}
 \end{frame}
