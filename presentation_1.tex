@@ -132,24 +132,29 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{PSRs, WFA, and OOMs}
+\frametitle{M-PSRs, PSRs, WFA, and OOMs}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.95\textwidth} % Left column and width
 \textbf{Goals:}
 \begin{enumerate}
-\item Learn a representation of hidden states 
-\item Model state to state transitions
-\item Predict observation sequences
-\item[] f: strings -> [0, 1]
+\item Make predictions in partially observable environments 
+\item Learn a representation of hidden states
 \item[]
 \end{enumerate}
 
-\textbf{Motivation}
+\textbf{Motivation:}
 \begin{enumerate}
-\item HMMs are a specific case
-\item Globally optima guaranteed
+\item Globally optimal guaranteed (unlike HMMs)
 \item Learn smaller representations
+\item[]
+
+\end{enumerate}
+
+\textbf{What does Multi-Step mean?}
+\begin{enumerate}
+\item Learn state transitions for interesting observation sequences
+\item Hope to leverage structure at different time-scales
 
 \end{enumerate}
 
@@ -161,7 +166,7 @@
 \begin{frame}
 \frametitle{PSR: The single observation case}
 
-\begin{itemize}
+\begin{enumerate}
 \item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
 \item[] where
 \item[] $\alpha_0$ is an initial weighting on states $1xn$
@@ -172,7 +177,7 @@
 
 \item[] $f(\sigma^k) = \alpha_0 \cdot A_\sigma^k \cdot \alpha_\infty$
 
-\end{itemize}
+\end{enumerate}
 
 \end{frame}
 
@@ -197,17 +202,16 @@
 \frametitle{The Base System}
 \begin{itemize}
 
-\item Idea: Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
+\item Idea: Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^{2^N}}\}$ as extra transition operators
 \item[] Note: operators learned separately
+
+\item[] $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
 \item[]
 
-\item $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
-\item[]
-
-\item[] \textbf{Why might this help?}
-\item Computations become more direct
-\item Capture structure directly
-\item Reduce error build up
+\item \textbf{Why might this help?}
+\item[] Reduce error build up
+\item[] Capture structure
+\item[] Faster computations
 
 \end{itemize}
 \end{frame}
@@ -370,11 +374,11 @@ We paint the first loop green and the second loop blue
 
 \item Substring properties: 
 \textbf{long}, \textbf{frequent}, \textbf{diverse}
-\item Structured environments should be easier
+\item[] Structured environments should be easier
 \item[]
 
 \item Iterative greedy heuristic works well
-\item Could also try an entropy based approach
+\item[] Could also try an entropy based approach
 
 \end{itemize}
 \end{frame}
