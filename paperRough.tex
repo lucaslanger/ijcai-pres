@@ -49,25 +49,32 @@ The standard way of computing with PSRs has been to include \{$A_s$\} s $\in \su
 
 \subsection{Selection of the Base}
 
-Given observation sequences one would like to automatically determine which operators to learn. From and intuitive standpoint, operators should cover all frequent and long substrings that occur in observations. Here, we present an iterative greedy algorithm for choosing such operators.
+Given observation sequences one would like to automatically determine which operators to learn. From and intuitive standpoint, operators should cover all frequent and long sub-strings that occur in observations. Here, we present an iterative greedy algorithm for choosing such operators.
 
 \begin{algorithm}
 \caption{Base Selection Algorithm}
 \label{Base Selection}
 \begin{algorithmic}[1]
 \Procedure{Base Selection}{}
-\State $BaseSystem \gets \{s, s \in \sum \} $
+\State $BaseSystem \gets \{s, s \in \sum \}$
 \State $i\gets 0$
 \While{$i<desiredBaseSize$}
 \For{each substring $s$ $\in Observations$ }
-\For{each observation in }
-
+\State $improvement \gets 0$
+\For{each observation $o$ in Observations}
+	improvement += optimalOrder($o$) - previousBest($o$)
 \EndFor
+\If $improvement is best$ \then
+\State $BaseSystem \gets BaseSystem \cup observation$
+\EndIf
+\EndFor
+\EndWhile
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 
+ENTROPY VIEW
 
 \section{Approach and Uniqueness} 
 

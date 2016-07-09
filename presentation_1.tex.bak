@@ -197,12 +197,13 @@ Supervisors: Borja Balle, Doina Precup \\
 \begin{itemize}
 
 \item Idea: Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^N}\}$ as extra transition operators
+\item[] Note: operators learned separately
+\item[]
 
 \item Timing queries: $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
+\item[]
+\item Motivation: express structure directly
 
-\item Motivation: 
-\item[] 1) Express transitions directly
-\item[] 2) Faster queries
 \end{itemize}
 \end{frame}
 
@@ -275,7 +276,7 @@ Agent drives around loops until leaving through an exit state.
 \end{columns}
 
 \begin{itemize}
-\item Base System dominates for smaller models
+\item[] Base System dominates for smaller models
 
 \item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
@@ -407,8 +408,8 @@ We paint the first loop green and the second loop blue
   \centering
   \captionsetup[subfigure]{labelformat=empty}
 
-  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoop47-27Heuristics.png}}\quad
-  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoop47-27Heuristics.png}}\quad
+  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoopTimingHeuristics47-27.png}}\quad
+  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoop64-16Heuristics.png}}\quad
   \subfloat{\includegraphics[width = 2in]{uCOREPICS/PacManTimingHeuristicsIncluded}}\quad
   \subfloat{\includegraphics[width = 2in]{uCOREPICS/MultipleObservationsHeuristics.png}}
 \end{figure}

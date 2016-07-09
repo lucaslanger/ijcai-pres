@@ -27,14 +27,6 @@ Predictive state representations (PSR) are used as a model for computing a proba
 
 Learning of PSRs began with work on non-spectral methods \cite{DBLP:conf/icml/Wiewiora05}. Spectral algorithms emerged later and became of particular interest because they delivered theoretical guarantees far better than other methods. \cite{boots2010closing}. On the applied side, spectral learning of PSRs has shown promise in planning with timing information \cite{pierrelucplanning2015} and in natural language processing for dependency parsing \cite{balle2013spectral}.
 
-We know introduce some notation. Let $\sum$ be the alphabet of observations symbols. Then we use $\sum*$ to denote the set of all finite strings which can be made from $\sum$.
-
-A PSR is defined by three parameters: f = $<\alpha_0, \{A_S\},\alpha_{\inf}>$. Here $\alpha_0$ is a row vector 1xn, $\alpha_{\inf\}$ is a column vector nx1, and $A_s, s \in S$ is a transition matrix $nxn$.
-
-Let x $\in \sum*$ be a query string with a decomposition $x=x_1x_2x_3...x_k$ with $x_i \in S$ . Then  $f(x) = \alpha_0 A_{x_1} A_{x_2} ... A_{x_k} \alpha_{\inf}$. Note that multiple decompositions of x may be possible. 
-
-
-
 \section{Approach and Uniqueness} 
 
 In our work, we extend the standard PSR learning algorithm by developing a new machinery for performing queries which we call the Base System. The main idea in the Base System is to include transition operators for sequences of observations in addition to those for single observations. We first apply the Base System to predict the time spent by an agent in a stochastic environment. We then progress to systems with multiple observations. Finally, we develop two heuristics: one for choosing operators from data, and another for applying operators in an effective order. The former uses an iterative greedy algorithm, while the latter uses a dynamic programming algorithm.
