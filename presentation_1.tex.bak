@@ -281,9 +281,9 @@ Agent drives around loops until leaving through an exit state.
 \end{columns}
 
 \begin{itemize}
-\item[] Base System dominates for smaller models
+%\item[] Base System dominates for smaller models
 
-\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+%\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -292,7 +292,7 @@ Agent drives around loops until leaving through an exit state.
 
 
 \begin{frame}
-\frametitle{Pacman Labyrinth}
+\frametitle{Pacman-like Labyrinth}
 
 %\begin{itemize}
 %\item Left figure: Timing predictions
@@ -312,7 +312,7 @@ Agent drives around loops until leaving through an exit state.
 
 \begin{itemize}
 
-\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+%\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 
@@ -346,7 +346,7 @@ We paint the first loop green and the second loop blue
 
 \begin{itemize}
 
-\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
+%\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
 \end{itemize}
 
 \end{frame}
@@ -359,7 +359,7 @@ We paint the first loop green and the second loop blue
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Picking the Base System}
+\frametitle{In general, which operators to learn?}
 \begin{itemize}
 
 
@@ -370,12 +370,11 @@ We paint the first loop green and the second loop blue
 
 \item Substring properties: 
 \textbf{long}, \textbf{frequent}, \textbf{diverse}
-\item[] Low entropy view of structure
+\item Structured environments should be easier
 \item[]
 
-\item Solution: iterative greedy heuristic 
-
-
+\item Iterative greedy heuristic works well
+\item Could also try an entropy based approach
 
 \end{itemize}
 \end{frame}
@@ -386,10 +385,10 @@ We paint the first loop green and the second loop blue
 \frametitle{Computing with the Base System}
 \begin{itemize}
 
-
 \item How should we execute queries?
-\item[] Goal: \textbf{minimize number of matrices}
-\item[]
+\item[] \textbf{Minimize number of matrices}
+\item[] Compact representation, 
+\items
 
 \item[] Query string: "abcacb", Base System = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
 
