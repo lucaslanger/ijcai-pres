@@ -93,7 +93,7 @@
 
 \title[Multi-Step PSR]{Learning Multi-Step Predictive State Representations} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Lucas Langer, Borja Balle, Doina Precup} % Your name
+\author{ADD CITATIONS into the presentation Lucas Langer, Borja Balle, Doina Precup} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 %McGill University \\ % Your institution for the title page
@@ -143,19 +143,18 @@
 \item[]
 \end{enumerate}
 
-\textbf{Motivation:}
+\textbf{Advantages over HMMs}
 \begin{enumerate}
-\item Globally optimal predictions (unlike HMMs)
-\item Learn smaller representations
+\item Globally optimal predictions
+\item Smaller representations of state
 \item[]
 
 \end{enumerate}
 
 \textbf{Why Multi-Step PSRs?}
 \begin{enumerate}
-\item Leverage structure at different time-scales
-\item Learn state transitions for interesting observation sequences
-
+\item Leverage structure of underlying environment
+\item Directly apply transitions which occur at longer time-scales 
 
 \end{enumerate}
 
@@ -168,11 +167,11 @@
 \frametitle{PSR: The single observation case}
 
 \begin{enumerate}
-\item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$
-\item[] where
-\item[] $\alpha_0$ is an initial weighting on states $1xn$
-\item[] $A_\sigma$ is a transition matrix $nxn$
-\item[] $\alpha_\infty$ is a normalizer $nx1$
+\item PSR defined by: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$, where
+\item[] $\alpha_0$ is an initial weighting on states $(1xn)$
+\item[] $A_\sigma$ is a transition matrix $(nxn)$
+\item[] $\alpha_\infty$ is a normalizer $(nx1)$
+\item[] n: number of latent states
 \item[]
 \item PSRs compute probabilities of observations
 
@@ -202,20 +201,20 @@
 
 \begin{frame}
 \frametitle{Adding multi-step operators: The Base System}
-\begin{itemize}
+\begin{enumerate}
 
-\item Idea: Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^{2^N}}\}$ as extra transition operators
-\item[] Note: operators learned separately
+\item Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^{2^N}}\}$ as extra transition operators
+\item[] Operators learned separately so $A_{\sigma} \cdot A_{\sigma} \neq A_{\sigma^2}$
+\item[]
 
-\item[] $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
+\item $f(\sigma^{11}) = \alpha_0 \cdot A_{\sigma^8} \cdot A_{\sigma^2} \cdot A_{\sigma^1} \cdot \alpha_\infty$
 \item[]
 
 \item \textbf{Why might this help?}
-\item[] Reduce error build up
-\item[] Capture structure
+\item[] Reduce build up of error
 \item[] Faster computations
 
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
 %------------------------------------------------
@@ -359,7 +358,7 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 %\item[] $||f - \hat{f}|| = \sqrt{\sum\nolimits_{x \in observations}(f(x) - \hat{f(x)})^2}$ 
-\end{itemize}
+\end{enumerate}
 
 \end{frame}
 
@@ -372,29 +371,30 @@ We paint the first loop green and the second loop blue
 
 \begin{frame}
 \frametitle{In general, which operators to learn?}
-\begin{itemize}
+\begin{enumerate}
 
-\item Observations: \{$a^{30}$:10, $a^{60}$:5, $b^{18}$:15\}
+\item Observations: \{$a^{30}b^{15}$, $a^{60}$, $b^{15}$\}
 
-\item[] Desired Operators: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
+\item[] Desired operators: $A_{a^{30}b^{15}}$, $A_{a^{60}}$, $A_{a^{30}}$, $A_{b^{15}}$, $A_a$, $A_b$
 \item[]
 
-\item Substring properties: 
+\item Sub-string properties: 
 \textbf{long}, \textbf{frequent}, \textbf{diverse}
 \item[] Structured environments should be easier
 \item[]
 
-\item Iterative greedy heuristic works well
+\item Trade-off between number of operators and learning time
+\item[] Iterative greedy heuristic works well
 \item[] Could also try an entropy based approach
 
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{How should we execute queries}
-\begin{itemize}
+\begin{enumerate}
 
 \item \textbf{Minimize number of matrices}
 \item[] Represent transitions as compactly as possible 
@@ -410,7 +410,7 @@ We paint the first loop green and the second loop blue
 \item Solution: dynamic programming
 \item[] State update for online applications
 
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
 %------------------------------------------------

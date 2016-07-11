@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  10 JUL 2016 18:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.29)  11 JUL 2016 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,7 +998,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 (./presentation_1.nav)
-Overfull \hbox (40.73245pt too wide) in paragraph at lines 106--106
+Overfull \hbox (148.16714pt too wide) in paragraph at lines 106--106
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1007,45 +1007,45 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 111.
 
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 163.
+LaTeX Font Info:    Try loading font information for U+msa on input line 162.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 163.
+LaTeX Font Info:    Try loading font information for U+msb on input line 162.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [2
 
 ]
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [3
 
 ]
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [4
 
 ]
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1055,14 +1055,14 @@ Overfull \hbox (40.73245pt too wide) has occurred while \output is active
 File: uCOREPICS/DoubleLoop64-16.png Graphic file (type png)
 
 <use uCOREPICS/DoubleLoop64-16.png>
-Package pdftex.def Info: uCOREPICS/DoubleLoop64-16.png used on input line 301.
+Package pdftex.def Info: uCOREPICS/DoubleLoop64-16.png used on input line 300.
 (pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
 
 <uCOREPICS/DoubleLoop47-27.png, id=184, 578.16pt x 433.62pt>
 File: uCOREPICS/DoubleLoop47-27.png Graphic file (type png)
 
 <use uCOREPICS/DoubleLoop47-27.png>
-Package pdftex.def Info: uCOREPICS/DoubleLoop47-27.png used on input line 301.
+Package pdftex.def Info: uCOREPICS/DoubleLoop47-27.png used on input line 300.
 (pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
 
 <lucasplots/monImages/doubleLoopImage.png, id=185, 751.30687pt x 459.21562pt>
@@ -1070,7 +1070,7 @@ File: lucasplots/monImages/doubleLoopImage.png Graphic file (type png)
 
 <use lucasplots/monImages/doubleLoopImage.png>
 Package pdftex.def Info: lucasplots/monImages/doubleLoopImage.png used on input
- line 301.
+ line 300.
 (pdftex.def)             Requested size: 68.45801pt x 41.83913pt.
 
 
@@ -1080,13 +1080,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.301 \end{frame}
+l.300 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1098,7 +1098,7 @@ ots/monImages/doubleLoopImage.png>]
 File: uCOREPICS/PacManTiming.png Graphic file (type png)
 
 <use uCOREPICS/PacManTiming.png>
-Package pdftex.def Info: uCOREPICS/PacManTiming.png used on input line 346.
+Package pdftex.def Info: uCOREPICS/PacManTiming.png used on input line 345.
 (pdftex.def)             Requested size: 239.60567pt x 179.70413pt.
 
 
@@ -1108,7 +1108,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 \end{frame}
+l.345 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1117,17 +1117,17 @@ If that doesn't work, type  X <return>  to quit.
 File: lucasplots/pac-man.jpg Graphic file (type jpg)
 
 <use lucasplots/pac-man.jpg>
-Package pdftex.def Info: lucasplots/pac-man.jpg used on input line 346.
+Package pdftex.def Info: lucasplots/pac-man.jpg used on input line 345.
 (pdftex.def)             Requested size: 51.3448pt x 32.09001pt.
 
 <uCOREPICS/graphPacMan.png, id=219, 683.55376pt x 1384.17125pt>
 File: uCOREPICS/graphPacMan.png Graphic file (type png)
 
 <use uCOREPICS/graphPacMan.png>
-Package pdftex.def Info: uCOREPICS/graphPacMan.png used on input line 346.
+Package pdftex.def Info: uCOREPICS/graphPacMan.png used on input line 345.
 (pdftex.def)             Requested size: 56.8966pt x 85.34885pt.
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1139,14 +1139,14 @@ File: uCOREPICS/MultipleObservations.png Graphic file (type png)
 
 <use uCOREPICS/MultipleObservations.png>
 Package pdftex.def Info: uCOREPICS/MultipleObservations.png used on input line 
-364.
+363.
 (pdftex.def)             Requested size: 205.37926pt x 154.0321pt.
 
 <lucasplots/monImages/doubleLoopImageMO.png, id=252, 751.30687pt x 459.21562pt>
 File: lucasplots/monImages/doubleLoopImageMO.png Graphic file (type png)
 <use lucasplots/monImages/doubleLoopImageMO.png>
 Package pdftex.def Info: lucasplots/monImages/doubleLoopImageMO.png used on inp
-ut line 364.
+ut line 363.
 (pdftex.def)             Requested size: 136.91603pt x 83.68527pt.
 
 
@@ -1156,13 +1156,26 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.364 \end{frame}
+l.363 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+! LaTeX Error: \begin{itemize} on input line 363 ended by \end{enumerate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.363 \end{frame}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1180,14 +1193,14 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              for symbol `textbraceleft' on input line 391.
 
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [9
 
 ]
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1282,7 +1295,7 @@ Overfull \vbox (10.73886pt too high) detected at line 431
  []
 
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1303,14 +1316,14 @@ Overfull \vbox (14.56863pt too high) detected at line 489
  []
 
 
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 [12
 
  <./uCOREPICS/M-PSR_Flow_Chart.pdf>]
-Overfull \hbox (40.73245pt too wide) has occurred while \output is active
+Overfull \hbox (148.16714pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
@@ -1346,7 +1359,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 515.
 Here is how much of TeX's memory you used:
  19957 strings out of 493304
  382852 string characters out of 6139871
- 472466 words of memory out of 5000000
+ 472610 words of memory out of 5000000
  22908 multiletter control sequences out of 15000+600000
  11469 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1363,7 +1376,7 @@ ic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb>
-Output written on presentation_1.pdf (13 pages, 1106999 bytes).
+Output written on presentation_1.pdf (13 pages, 1109163 bytes).
 PDF statistics:
  488 PDF objects out of 1000 (max. 8388607)
  417 compressed objects within 5 object streams
