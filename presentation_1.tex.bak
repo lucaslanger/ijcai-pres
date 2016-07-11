@@ -132,7 +132,7 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{M-PSRs, PSRs, WFA, and OOMs}
+\frametitle{Predictive State Representations (PSR)}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.95\textwidth} % Left column and width
@@ -145,16 +145,17 @@
 
 \textbf{Motivation:}
 \begin{enumerate}
-\item Globally optimal guaranteed (unlike HMMs)
+\item Globally optimal predictions (unlike HMMs)
 \item Learn smaller representations
 \item[]
 
 \end{enumerate}
 
-\textbf{What does Multi-Step mean?}
+\textbf{Why Multi-Step PSRs?}
 \begin{enumerate}
+\item Leverage structure at different time-scales
 \item Learn state transitions for interesting observation sequences
-\item Hope to leverage structure at different time-scales
+
 
 \end{enumerate}
 
@@ -190,7 +191,8 @@
 \item[] Step 1: Represent Data as a Hankel Matrix
 \item[] Step 2: Singular Value Decomposition
 \item[] Step 3: Pick Model Size
-\item[] Step 4: Learn PSR: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
+\item[] Step 4: Linear Algebra
+\item[] Result: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
 \end{itemize}
 
 \end{frame}
@@ -199,7 +201,7 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{The Base System}
+\frametitle{Adding multi-step operators: The Base System}
 \begin{itemize}
 
 \item Idea: Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^{2^N}}\}$ as extra transition operators
@@ -244,6 +246,7 @@ $f_Naive(x) = (\pi*\alpha_0)*(\pi*A_\sigma^128)*(\pi*\alpha_\infty)$
 \section{Experimental results}
 %------------------------------------------------
 
+\begin{comment}
 \begin{frame}
 \frametitle{Timing with the Base}
 Agent drives around loops until leaving through an exit state. 
@@ -252,7 +255,7 @@ Agent drives around loops until leaving through an exit state.
 \includegraphics[width=0.8\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}
 \end{frame}
-
+\end{comment}
 %------------------------------------------------
 
 
@@ -271,15 +274,20 @@ Agent drives around loops until leaving through an exit state.
 
 \begin{columns}[c]
 
-\column{.5\textwidth} % Left column and width
+\column{.4\textwidth} % Left column and width
 \begin{figure}
 
 \includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop64-16.png}
 \end{figure}
 
-\column{.5\textwidth} % Right column and width
+\column{.4\textwidth} % Right column and width
 \begin{figure}
 \includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop47-27.png}
+\end{figure}
+
+\column{.2\textwidth}
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}
 
 \end{columns}
@@ -366,10 +374,9 @@ We paint the first loop green and the second loop blue
 \frametitle{In general, which operators to learn?}
 \begin{itemize}
 
+\item Observations: \{$a^{30}$:10, $a^{60}$:5, $b^{18}$:15\}
 
-\item Observations: \{"$a^{30}$":10, "$a^{60}$":5, "$b^{18}$":15\}
-
-\item[] Desired Base System: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
+\item[] Desired Operators: $A_{a^{30}}$, $A_{b^{18}}$, $A_a$, $A_b$
 \item[]
 
 \item Substring properties: 
@@ -390,7 +397,7 @@ We paint the first loop green and the second loop blue
 \begin{itemize}
 
 \item \textbf{Minimize number of matrices}
-\item[] Compact representation, lower error build-up 
+\item[] Represent transitions as compactly as possible 
 \item[]
 
 \item Query string: "abcacb", Operators = $\{A_{ab}, A_{bca}, A_{cb}, A_a, A_b \}$ 
@@ -424,7 +431,7 @@ We paint the first loop green and the second loop blue
 \end{frame}
 
 %------------------------------------------------
-
+\begin{comment}
 \begin{frame}
 \frametitle{The Big Picture}
 
@@ -461,9 +468,24 @@ We paint the first loop green and the second loop blue
 \draw [arrow] (dec1) -- node[anchor=south] {a-bca-cb} (out1);
 \draw [arrow] (out1) -- node[anchor=east] {$\alpha_0 \cdot A_a \cdot A_{bca} \cdot A_{cb} \cdot \alpha_{\infty}$} (stop);
 
-
-
 \end{tikzpicture}
+\end{frame}
+\end{comment}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{The Big Picture}
+
+\begin{columns}[c]
+
+\column{1\textwidth} % Left column and width
+\begin{figure}
+
+\includegraphics[width=0.63\linewidth]{uCOREPICS/M-PSR_Flow_Chart.pdf}
+\end{figure}
+\end{columns}
+
 \end{frame}
 
 %------------------------------------------------
