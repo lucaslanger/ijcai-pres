@@ -22,11 +22,11 @@
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\slideentry {3}{0}{7}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {3}{0}{8}{8/8}{}{0}}
+\headcommand {\sectionentry {4}{Learning the Base System}{8}{Learning the Base System}{0}}
+\headcommand {\beamer@sectionpages {6}{7}}
+\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\slideentry {4}{0}{8}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\sectionentry {4}{Learning the Base System}{9}{Learning the Base System}{0}}
-\headcommand {\beamer@sectionpages {6}{8}}
-\headcommand {\beamer@subsectionpages {6}{8}}
 \headcommand {\slideentry {4}{0}{9}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
 \headcommand {\slideentry {4}{0}{10}{10/10}{}{0}}
@@ -35,10 +35,8 @@
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\slideentry {4}{0}{12}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {4}{0}{13}{13/13}{}{0}}
-\headcommand {\beamer@framepages {13}{13}}
-\headcommand {\beamer@partpages {1}{13}}
-\headcommand {\beamer@subsectionpages {9}{13}}
-\headcommand {\beamer@sectionpages {9}{13}}
-\headcommand {\beamer@documentpages {13}}
-\headcommand {\def \inserttotalframenumber {13}}
+\headcommand {\beamer@partpages {1}{12}}
+\headcommand {\beamer@subsectionpages {8}{12}}
+\headcommand {\beamer@sectionpages {8}{12}}
+\headcommand {\beamer@documentpages {12}}
+\headcommand {\def \inserttotalframenumber {12}}

@@ -136,7 +136,7 @@
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.95\textwidth} % Left column and width
-\textbf{Goals:}
+\textbf{Motivation}
 \begin{enumerate}
 \item Make predictions in partially observable environments 
 \item Learn a representation of hidden states
@@ -145,8 +145,9 @@
 
 \textbf{Advantages over HMMs}
 \begin{enumerate}
-\item Globally optimal predictions
+\item Statistically consistent and well understood learning efficiency
 \item Smaller representations of state
+\item[] [Boots et al., 2011; Hsu et al., 2009; Bailly et al., 2010]
 \item[]
 
 \end{enumerate}
@@ -174,8 +175,9 @@
 \item[] n: number of latent states
 \item[]
 \item PSRs compute probabilities of observations
-
 \item[] $f(\sigma^k) = \alpha_0 \cdot A_\sigma^k \cdot \alpha_\infty$
+\item[]
+\item[] Littman et al., 2001; Singh et al., 2004; Rosencrantz et al., 2004
 
 \end{enumerate}
 
@@ -192,6 +194,8 @@
 \item[] Step 3: Pick Model Size
 \item[] Step 4: Linear Algebra
 \item[] Result: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
+\item[]
+\item[] Boots et al., 2011
 \end{itemize}
 
 \end{frame}
@@ -203,7 +207,7 @@
 \frametitle{Adding multi-step operators: The Base System}
 \begin{enumerate}
 
-\item Learn $\{A_{\sigma}, A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^{2^N}}\}$ as extra transition operators
+\item Learn $\{A_{\sigma^2}, A_{\sigma^4}, A_{\sigma^8}, ... A_{\sigma^{2^N}}\}$ as extra transition operators
 \item[] Operators learned separately so $A_{\sigma} \cdot A_{\sigma} \neq A_{\sigma^2}$
 \item[]
 
@@ -268,23 +272,23 @@ Agent drives around loops until leaving through an exit state.
 
 %\end{itemize}
 
-\hspace{1cm} \textbf{64-16 Loop Lengths}
-\hspace{2.5cm} \textbf{47-27 Loop Lengths}
+%\hspace{1cm} \textbf{64-16 Loop Lengths}
+%\hspace{2.5cm} \textbf{47-27 Loop Lengths}
 
 \begin{columns}[c]
 
-\column{.4\textwidth} % Left column and width
+\column{.75\textwidth} % Left column and width
 \begin{figure}
 
 \includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop64-16.png}
 \end{figure}
 
-\column{.4\textwidth} % Right column and width
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop47-27.png}
-\end{figure}
+%\column{.4\textwidth} % Right column and width
+%\begin{figure}
+%\includegraphics[width=1.0\linewidth]{uCOREPICS/DoubleLoop47-27.png}
+%\end{figure}
 
-\column{.2\textwidth}
+\column{.25\textwidth}
 \begin{figure}
 \includegraphics[width=1.0\linewidth]{lucasplots/monImages/doubleLoopImage.png}
 \end{figure}
@@ -345,7 +349,7 @@ Agent drives around loops until leaving through an exit state.
 \end{frame}
 
 %------------------------------------------------
-
+\begin{comment}
 \begin{frame}
 \frametitle{Wall Color Predictions}
 We paint the first loop green and the second loop blue
@@ -361,7 +365,7 @@ We paint the first loop green and the second loop blue
 \end{enumerate}
 
 \end{frame}
-
+\end{comment}
 %------------------------------------------------
 
 %------------------------------------------------
@@ -418,15 +422,25 @@ We paint the first loop green and the second loop blue
 \begin{frame}
 \frametitle{Performance of Heuristics}
 
-\begin{figure}[!ht]
-  \centering
-  \captionsetup[subfigure]{labelformat=empty}
+\begin{columns}[c]
 
-  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoopTimingHeuristics47-27.png}}\quad
-  \subfloat{\includegraphics[width = 2in]{uCOREPICS/DoubleLoop64-16Heuristics.png}}\quad
-  \subfloat{\includegraphics[width = 2in]{uCOREPICS/PacManTimingHeuristicsIncluded}}\quad
-  \subfloat{\includegraphics[width = 2in]{uCOREPICS/MultipleObservationsHeuristics.png}}
+\column{.4\textwidth} % Left column and width
+\begin{figure}
+
+\includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTimingHeuristicsIncluded.png}
 \end{figure}
+
+\column{.4\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{uCOREPICS/MultipleObservationsHeuristics.png}
+\end{figure}
+
+\column{.2\textwidth}
+\begin{figure}
+\includegraphics[width=1.0\linewidth]{lucasplots/monImages/doubleLoopImageMO.png}
+\end{figure}
+
+\end{columns}
 
 \end{frame}
 
