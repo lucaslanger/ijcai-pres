@@ -84,6 +84,7 @@
 \usepackage{subcaption}
 \usepackage{subfig}
 \usepackage{caption}
+\usepackage{pifont}
 \usetikzlibrary{shapes.geometric, arrows}
 
 
@@ -91,9 +92,9 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Multi-Step PSR]{Learning Multi-Step Predictive State Representations} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Multi-Step PSRs]{Learning Multi-Step Predictive State Representations} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{ADD CITATIONS into the presentation Lucas Langer, Borja Balle, Doina Precup} % Your name
+\author{Lucas Langer (\ding{168}), Borja Balle (\ding{70}), Doina Precup (\ding{168}) \\ McGill University (\ding{168}), Lancaster University (\ding{70})} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 %McGill University \\ % Your institution for the title page
@@ -147,6 +148,7 @@
 \begin{enumerate}
 \item Statistically consistent and well understood learning efficiency
 \item Smaller representations of state
+\item[] [Boots et al., 2011; Hsu et al., 2009; Bailly et al., 2010]
 \item[]
 
 \end{enumerate}
@@ -176,7 +178,7 @@
 \item PSRs compute probabilities of observations
 \item[] $f(\sigma^k) = \alpha_0 \cdot A_\sigma^k \cdot \alpha_\infty$
 \item[]
-\item[] Littman et al., 2001; Singh et al., 2004; Rosencrantz et al., 2004
+\item[] [Littman et al., 2001; Singh et al., 2004; Rosencrantz et al., 2004]
 
 \end{enumerate}
 
@@ -187,15 +189,15 @@
 \begin{frame}
 \frametitle{Spectral Learning of PSRs}
 
-\begin{itemize}
-\item[] Step 1: Represent Data as a Hankel Matrix
-\item[] Step 2: Singular Value Decomposition
-\item[] Step 3: Pick Model Size
-\item[] Step 4: Linear Algebra
-\item[] Result: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
+\begin{enumerate}
+\item Represent Data as a Hankel Matrix
+\item Singular Value Decomposition
+\item Pick Model Size
+\item Linear Algebra
+\item Result: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
 \item[]
-\item[] Boots et al., 2011
-\end{itemize}
+\item[] [Boots et al., 2011]
+\end{enumerate}
 
 \end{frame}
 
