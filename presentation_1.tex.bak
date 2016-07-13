@@ -94,7 +94,7 @@
 
 \title[Multi-Step PSRs]{Learning Multi-Step Predictive State Representations} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Lucas Langer (\ding{168}), Borja Balle (\ding{70}), Doina Precup (\ding{168}) \\ McGill University (\ding{168}), Lancaster University (\ding{70})} % Your name
+\author{Lucas Langer (\ding{168}), Borja Balle (\ding{70}), Doina Precup (\ding{168}) \\~ \\ McGill University (\ding{168}), Lancaster University (\ding{70})} % Your name
 \institute[McGill University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 %McGill University \\ % Your institution for the title page
@@ -190,9 +190,9 @@
 \frametitle{Spectral Learning of PSRs}
 
 \begin{enumerate}
-\item Represent Data as a Hankel Matrix
+\item Represent data as a Hankel Matrix
 \item Singular Value Decomposition
-\item Pick Model Size
+\item Pick model size
 \item Linear Algebra
 \item Result: $\langle \alpha_0, \{A_\sigma\},\alpha_\infty \rangle$ 
 \item[]
@@ -425,13 +425,13 @@ We paint the first loop green and the second loop blue
 
 \begin{columns}[c]
 
-\column{.4\textwidth} % Left column and width
-\begin{figure}
+%\column{.4\textwidth} % Left column and width
+%\begin{figure}
 
-\includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTimingHeuristicsIncluded.png}
-\end{figure}
+%\includegraphics[width=1.0\linewidth]{uCOREPICS/PacManTimingHeuristicsIncluded.png}
+%\end{figure}
 
-\column{.4\textwidth} % Right column and width
+\column{.8\textwidth} % Right column and width
 \begin{figure}
 \includegraphics[width=1.0\linewidth]{uCOREPICS/MultipleObservationsHeuristics.png}
 \end{figure}
@@ -488,7 +488,7 @@ We paint the first loop green and the second loop blue
 \end{comment}
 
 %------------------------------------------------
-
+\begin{comment}
 \begin{frame}
 \frametitle{The Big Picture}
 
@@ -502,6 +502,7 @@ We paint the first loop green and the second loop blue
 \end{columns}
 
 \end{frame}
+\end{comment}
 
 %------------------------------------------------
 
